@@ -73,10 +73,6 @@ export const Workflow: React.FC = () => {
         <div className="mb-10">
           <CurtainReveal initialScale={1.08} initialY={35}>
             <div className="relative rounded-xl overflow-hidden bg-brand-offwhite border border-brand-border shadow-xs">
-              <div className="px-4 py-2 bg-brand-offwhite border-b border-brand-border flex items-center justify-between text-label text-brand-navymuted">
-                <span className="font-semibold text-brand-navy">Workflow Overview</span>
-                <span>Process Architecture</span>
-              </div>
               <div className="relative w-full aspect-[16/9] min-h-[200px] sm:min-h-[300px] lg:min-h-[400px]">
                 <img
                   src="/images/workflow-illustration.png"

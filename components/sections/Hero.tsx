@@ -86,20 +86,6 @@ export const Hero: React.FC<HeroProps> = ({ onRequestDemo }) => {
             Explore Solutions
           </a>
         </motion.div>
-
-        {/* Subtle Trust Strip beneath CTAs */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.6, delay: 0.45 }}
-          className="pt-6 sm:pt-8 flex flex-wrap items-center justify-center gap-x-4 gap-y-1.5 text-label text-brand-navymuted"
-        >
-          <span>Document extraction and review</span>
-          <span className="text-brand-border">•</span>
-          <span>Automated matching and validation</span>
-          <span className="text-brand-border">•</span>
-          <span>Human-controlled final approval</span>
-        </motion.div>
       </div>
 
       {/* 3. Subtle bottom horizon gradient melting into next section */}

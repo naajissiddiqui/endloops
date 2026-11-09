@@ -130,23 +130,22 @@ export const DemoModal: React.FC<DemoModalProps> = ({
             </button>
 
             {isSuccess ? (
-              <div className="py-4 text-center space-y-3">
-                <CheckCircle2 className="w-8 h-8 text-brand-green mx-auto" />
+              <div className="py-6 text-center space-y-4">
+                <div className="w-12 h-12 rounded-full bg-brand-green/10 text-brand-green flex items-center justify-center mx-auto">
+                  <CheckCircle2 className="w-6 h-6 text-brand-green" />
+                </div>
                 <div>
-                  <h3 className="text-h3 text-brand-navy">Demo Request Received</h3>
-                  <p className="text-body-sm text-brand-navymuted mt-1 max-w-sm mx-auto leading-relaxed">
-                    Thank you, <span className="font-semibold text-brand-navy">{formData.name}</span>. We have recorded your interest in <span className="font-semibold text-brand-teal">{formData.product}</span>.
+                  <h3 className="text-h3 text-brand-navy">Request Received</h3>
+                  <p className="text-body-sm text-brand-navymuted mt-1.5 max-w-xs mx-auto">
+                    Thank you{formData.name ? `, ${formData.name}` : ''}. We'll be in touch shortly.
                   </p>
                 </div>
 
-                <div className="bg-brand-offwhite rounded-xl p-3.5 border border-brand-border text-left text-body-sm text-brand-navymuted leading-relaxed">
-                  <div className="font-semibold text-brand-navy mb-1">Demonstration Notice</div>
-                  This website is a demonstration build. The form has been verified and processed locally without sending personal data to an external server.
+                <div className="pt-2">
+                  <Button variant="primary" size="md" onClick={handleReset} className="w-full">
+                    Done
+                  </Button>
                 </div>
-
-                <Button variant="primary" size="md" onClick={handleReset} className="w-full">
-                  Return to Website
-                </Button>
               </div>
             ) : (
               <div>

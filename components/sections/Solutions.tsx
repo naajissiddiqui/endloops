@@ -83,10 +83,6 @@ export const Solutions: React.FC<SolutionsProps> = ({ onRequestDemo }) => {
         <div className="mb-10">
           <CurtainReveal initialScale={1.08} initialY={35}>
             <div className="relative rounded-xl overflow-hidden bg-brand-offwhite border border-brand-border shadow-xs">
-              <div className="px-4 py-2 bg-brand-offwhite border-b border-brand-border flex items-center justify-between text-label text-brand-navymuted">
-                <span className="font-semibold text-brand-navy">Financial Audit Suite</span>
-                <span>Workflow Overview</span>
-              </div>
               <div className="relative w-full aspect-[16/9] min-h-[200px] sm:min-h-[300px] lg:min-h-[400px]">
                 <img
                   src="/images/financial-audit.png"

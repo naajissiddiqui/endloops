@@ -94,22 +94,6 @@ export const ValueProp: React.FC = () => {
             </div>
           </ScrollReveal>
         </div>
-
-        {/* Minimal 3-point strip */}
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-4xl mx-auto mt-10 pt-6 border-t border-brand-border text-body-sm text-brand-navymuted">
-          <div>
-            <strong className="text-brand-navy font-semibold block mb-0.5">Audit-Tested</strong>
-            Built from real-world accounting and audit workflows.
-          </div>
-          <div>
-            <strong className="text-brand-navy font-semibold block mb-0.5">Full Traceability</strong>
-            Every extracted figure links directly to its source document.
-          </div>
-          <div>
-            <strong className="text-brand-navy font-semibold block mb-0.5">Batch Processing</strong>
-            Handles hundreds of files without manual review fatigue.
-          </div>
-        </div>
       </div>
     </section>
   );

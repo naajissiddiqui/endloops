@@ -75,3 +75,4 @@ async function testParallaxAndCapture() {
 }
 
 testParallaxAndCapture().catch(console.error);
+

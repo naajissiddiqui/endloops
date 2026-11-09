@@ -184,7 +184,6 @@ export const Capabilities: React.FC = () => {
           >
             <div className="flex items-center justify-between pb-2 border-b border-brand-border">
               <span className="text-body-sm font-semibold text-brand-navy">{current.preview.title}</span>
-              <span className="text-label text-brand-navymuted font-mono">Illustrative</span>
             </div>
 
             <div className="bg-white rounded border border-brand-border divide-y divide-brand-border text-body-sm">
@@ -194,10 +193,6 @@ export const Capabilities: React.FC = () => {
                   <span className="text-brand-navy font-semibold text-right">{field.value}</span>
                 </div>
               ))}
-            </div>
-
-            <div className="text-label text-brand-navymuted">
-              Sample data shown for demonstration purposes.
             </div>
           </SpotlightCard>
         </motion.div>

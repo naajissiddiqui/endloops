@@ -1,124 +1,109 @@
 'use client';
 
 import React from 'react';
-import { FileText } from 'lucide-react';
+import { FileCheck, AlertCircle, ArrowRight } from 'lucide-react';
 
 export const HeroProductVisual: React.FC = () => {
   return (
-    <div className="w-full bg-white rounded-xl border border-brand-border shadow-xs overflow-hidden text-left font-sans">
-      {/* Top Application Bar: Labels 12px / 11px, weight 500 */}
-      <div className="flex flex-wrap items-center justify-between px-4 sm:px-5 py-2.5 border-b border-brand-border bg-brand-offwhite/40 text-label text-brand-navymuted gap-2">
-        <div className="flex items-center space-x-2">
-          <span className="font-semibold text-brand-navy">Product Preview</span>
+    <div className="w-full max-w-4xl mx-auto bg-white rounded-2xl border border-brand-border shadow-sm overflow-hidden text-left font-sans">
+      {/* Clean Header Bar */}
+      <div className="px-5 sm:px-7 py-3.5 border-b border-brand-border bg-brand-offwhite/50 flex flex-wrap items-center justify-between gap-3 text-body-sm">
+        <div className="flex items-center gap-2.5">
+          <span className="w-2 h-2 rounded-full bg-brand-green" />
+          <span className="font-semibold text-brand-navy">Automated Invoice Matching</span>
           <span className="text-brand-border">/</span>
-          <span>Document Extraction &amp; Matching</span>
+          <span className="text-brand-navymuted">PO-2025-0419</span>
         </div>
-        <div>
-          <span className="font-medium text-brand-navymuted">Review Pending</span>
+        <div className="flex items-center gap-1.5 text-label font-medium text-amber-700 bg-amber-50 px-2.5 py-1 rounded-full border border-amber-200/60">
+          <AlertCircle className="w-3.5 h-3.5" />
+          <span>1 Variance for Review</span>
         </div>
       </div>
 
-      {/* Main Two-Column Workbench */}
-      <div className="grid grid-cols-1 lg:grid-cols-12 divide-y lg:divide-y-0 lg:divide-x divide-brand-border">
-        {/* Left Column: Invoice Preview */}
-        <div className="lg:col-span-6 p-4 sm:p-5 bg-brand-offwhite/20 space-y-3">
-          <div className="flex items-center justify-between text-body-sm">
-            <div className="font-semibold text-brand-navy flex items-center gap-1.5">
-              <FileText className="w-3.5 h-3.5 text-brand-teal" />
-              <span>Invoice #INV-2025-084</span>
-            </div>
-            <span className="text-label text-brand-navymuted">12 Mar 2025</span>
+      {/* Main Content Area: Simplified and Airy */}
+      <div className="p-5 sm:p-7 space-y-6">
+        {/* Document Metadata Strip */}
+        <div className="flex flex-wrap items-center justify-between gap-4 pb-5 border-b border-brand-border text-body-sm">
+          <div>
+            <div className="font-semibold text-brand-navy">Al Noor Office Supplies LLC</div>
+            <div className="text-brand-navymuted text-label mt-0.5">Invoice #INV-2025-084 · 12 Mar 2025</div>
           </div>
-
-          <div className="bg-white p-3 rounded-lg border border-brand-border space-y-0.5">
-            <div className="text-body-sm font-semibold text-brand-navy">Al Noor Office Supplies LLC</div>
-            <div className="text-label text-brand-navymuted font-mono">TRN: 100-2938-4720-0003</div>
-          </div>
-
-          {/* Line Items Table */}
-          <div className="bg-white rounded-lg border border-brand-border overflow-hidden">
-            <div className="px-3 py-1.5 bg-brand-offwhite/50 border-b border-brand-border text-label font-medium text-brand-navymuted grid grid-cols-12 gap-2">
-              <span className="col-span-6">Item</span>
-              <span className="col-span-2 text-center">Qty</span>
-              <span className="col-span-4 text-right">AED</span>
-            </div>
-            <div className="divide-y divide-brand-border/60 text-body-sm">
-              <div className="px-3 py-2 grid grid-cols-12 gap-2 items-center">
-                <span className="col-span-6 text-brand-navy truncate">Storage Binders</span>
-                <span className="col-span-2 text-center text-brand-navymuted">40</span>
-                <span className="col-span-4 text-right font-mono text-brand-navy">4,400.00</span>
-              </div>
-              <div className="px-3 py-2 grid grid-cols-12 gap-2 items-center">
-                <span className="col-span-6 text-brand-navy truncate">Laser Toner</span>
-                <span className="col-span-2 text-center text-brand-navymuted">8</span>
-                <span className="col-span-4 text-right font-mono text-brand-navy">9,600.00</span>
-              </div>
-              <div className="px-3 py-2 grid grid-cols-12 gap-2 items-center">
-                <span className="col-span-6 text-brand-navy truncate">Freight &amp; Handling</span>
-                <span className="col-span-2 text-center text-brand-navymuted">1</span>
-                <span className="col-span-4 text-right font-mono font-medium text-brand-navy">750.00</span>
-              </div>
-            </div>
-          </div>
-
-          <div className="p-2.5 bg-white rounded-lg border border-brand-border flex items-center justify-between text-body-sm">
-            <span className="text-brand-navymuted">Total including 5% VAT:</span>
-            <span className="font-semibold text-brand-navy font-mono">AED 15,487.50</span>
+          <div className="text-right">
+            <div className="text-label text-brand-navymuted">Total Amount</div>
+            <div className="font-semibold text-brand-navy font-mono text-body">AED 15,487.50</div>
           </div>
         </div>
 
-        {/* Right Column: PO Comparison */}
-        <div className="lg:col-span-6 p-4 sm:p-5 bg-white space-y-3 flex flex-col justify-between">
-          <div className="space-y-3">
-            <div className="flex items-center justify-between text-body-sm">
-              <span className="font-semibold text-brand-navy">Matched with PO-2025-0419</span>
-              <span className="text-label text-brand-navymuted">2 matched · 1 variance</span>
+        {/* Clean Line Items List */}
+        <div className="space-y-3">
+          {/* Item 1: Storage Binders (Matched) */}
+          <div className="p-4 rounded-xl bg-brand-offwhite/40 border border-brand-border flex items-center justify-between gap-4">
+            <div className="flex items-center gap-3">
+              <div className="w-8 h-8 rounded-lg bg-brand-green/10 text-brand-green flex items-center justify-center flex-shrink-0">
+                <FileCheck className="w-4 h-4" />
+              </div>
+              <div>
+                <div className="font-semibold text-brand-navy text-body-sm">Storage Binders (40 units)</div>
+                <div className="text-label text-brand-navymuted mt-0.5">Matched with PO · AED 110.00 / unit</div>
+              </div>
             </div>
-
-            <div className="space-y-2">
-              <div className="p-2.5 rounded-lg border border-brand-border flex items-center justify-between">
-                <div>
-                  <div className="text-body-sm font-semibold text-brand-navy">Storage Binders</div>
-                  <div className="text-label text-brand-navymuted">PO: 40 × AED 110.00</div>
-                </div>
-                <span className="font-mono text-label text-brand-navymuted">Matched</span>
-              </div>
-
-              <div className="p-2.5 rounded-lg border border-brand-border flex items-center justify-between">
-                <div>
-                  <div className="text-body-sm font-semibold text-brand-navy">Laser Toner</div>
-                  <div className="text-label text-brand-navymuted">PO: 8 × AED 1,200.00</div>
-                </div>
-                <span className="font-mono text-label text-brand-navymuted">Matched</span>
-              </div>
-
-              {/* Highlighted Discrepancy - Clean, neutral */}
-              <div className="p-2.5 rounded-lg border border-brand-border bg-brand-offwhite/50 space-y-1">
-                <div className="flex items-center justify-between text-body-sm font-semibold text-brand-navy">
-                  <span>Freight &amp; Handling</span>
-                  <span className="font-mono text-label font-semibold text-brand-navy">+AED 250.00 variance</span>
-                </div>
-                <p className="text-label text-brand-navymuted">
-                  PO limit AED 500.00 · Billed AED 750.00. Flagged for review.
-                </p>
-              </div>
+            <div className="text-right">
+              <div className="font-mono font-medium text-brand-navy text-body-sm">AED 4,400.00</div>
+              <span className="text-label text-brand-green font-medium">Matched</span>
             </div>
           </div>
 
-          {/* Action Row: Button 15px, weight 500 */}
-          <div className="pt-2 border-t border-brand-border flex flex-col sm:flex-row items-stretch sm:items-center gap-2">
-            <button
-              type="button"
-              className="py-1.5 px-3 text-btn font-medium rounded-lg bg-brand-navy text-white hover:bg-brand-navylight transition-colors text-center"
-            >
-              Review Discrepancy
-            </button>
-            <button
-              type="button"
-              className="py-1.5 px-3 text-btn font-medium rounded-lg border border-brand-border text-brand-navy hover:bg-brand-offwhite transition-colors text-center"
-            >
-              Accept with Note
-            </button>
+          {/* Item 2: Laser Toner (Matched) */}
+          <div className="p-4 rounded-xl bg-brand-offwhite/40 border border-brand-border flex items-center justify-between gap-4">
+            <div className="flex items-center gap-3">
+              <div className="w-8 h-8 rounded-lg bg-brand-green/10 text-brand-green flex items-center justify-center flex-shrink-0">
+                <FileCheck className="w-4 h-4" />
+              </div>
+              <div>
+                <div className="font-semibold text-brand-navy text-body-sm">Laser Toner (8 units)</div>
+                <div className="text-label text-brand-navymuted mt-0.5">Matched with PO · AED 1,200.00 / unit</div>
+              </div>
+            </div>
+            <div className="text-right">
+              <div className="font-mono font-medium text-brand-navy text-body-sm">AED 9,600.00</div>
+              <span className="text-label text-brand-green font-medium">Matched</span>
+            </div>
+          </div>
+
+          {/* Item 3: Freight & Handling (Variance) */}
+          <div className="p-4 rounded-xl bg-amber-50/50 border border-amber-200/80 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+            <div className="flex items-start gap-3">
+              <div className="w-8 h-8 rounded-lg bg-amber-100 text-amber-700 flex items-center justify-center flex-shrink-0 mt-0.5 sm:mt-0">
+                <AlertCircle className="w-4 h-4" />
+              </div>
+              <div>
+                <div className="font-semibold text-brand-navy text-body-sm flex items-center gap-2">
+                  <span>Freight &amp; Handling</span>
+                  <span className="text-label font-mono font-semibold text-amber-800 bg-amber-100/80 px-2 py-0.5 rounded">
+                    +AED 250.00 variance
+                  </span>
+                </div>
+                <div className="text-label text-brand-navymuted mt-1">
+                  Billed AED 750.00 · PO ceiling was AED 500.00. Flagged for human review.
+                </div>
+              </div>
+            </div>
+
+            <div className="flex items-center gap-2 sm:self-center self-end pt-2 sm:pt-0">
+              <button
+                type="button"
+                className="px-3.5 py-1.5 rounded-lg bg-white border border-brand-border text-label font-medium text-brand-navy hover:bg-brand-offwhite transition-colors"
+              >
+                Accept with Note
+              </button>
+              <button
+                type="button"
+                className="px-3.5 py-1.5 rounded-lg bg-brand-navy text-white text-label font-medium hover:bg-brand-navylight transition-colors flex items-center gap-1.5"
+              >
+                <span>Review Discrepancy</span>
+                <ArrowRight className="w-3.5 h-3.5" />
+              </button>
+            </div>
           </div>
         </div>
       </div>

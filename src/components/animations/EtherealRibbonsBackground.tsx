@@ -152,3 +152,4 @@ export const EtherealRibbonsBackground: React.FC<EtherealRibbonsBackgroundProps>
 };
 
 export default EtherealRibbonsBackground;
+
