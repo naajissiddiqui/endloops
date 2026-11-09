@@ -3,7 +3,7 @@
 import React, { useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { ChevronRight, ArrowRight } from 'lucide-react';
+import { ChevronRight } from 'lucide-react';
 import Navbar from '@/components/layout/Navbar';
 import Footer from '@/components/layout/Footer';
 import Button from '@/components/ui/Button';
@@ -28,53 +28,45 @@ export default function SolutionsPage() {
       desc: 'Complete software that runs statutory audits from trial balance ingestion through to automated voucher sampling, ledger reconciliation, and working-paper preparation.',
       features: [
         'Automated voucher sampling and substantiation against source documents',
-        'Direct reconciliation of general ledger with bank and tax filings',
         'Auto-compilation of standardized audit working papers and lead sheets',
-        'Exception dashboard flagging items requiring auditor review',
       ],
-      target: 'Audit practices, certified auditors, and public accounting teams.',
+      target: 'Audit practices and certified accountants',
       image: '/images/financial-audit.png',
     },
     {
       id: 'escrow-audit',
       title: 'Escrow audit',
       category: 'Real estate & trust compliance',
-      desc: 'Software built to satisfy escrow audit requirements for real estate development funds and client trust accounts in Dubai and the GCC region.',
+      desc: 'Software built to satisfy escrow audit requirements for real estate development funds and client trust accounts.',
       features: [
-        'Verification of project expense disbursements against approved budget lines',
-        'Contractor payment certificate tracking and retention money calculations',
-        'Evaluation against statutory escrow disbursement limits',
-        'Preparation of structured audit inspection packages for submission',
+        'Verification of project disbursements against approved budget lines',
+        'Tracks contractor payment certificates and retention calculations',
       ],
-      target: 'Auditors handling property developer escrow accounts and trust funds.',
-      image: '/images/financial-workflow.png',
+      target: 'Auditors handling property developer escrow accounts',
+      image: '/images/workflow-illustration.png',
     },
     {
       id: 'budget-review',
       title: 'Budget review',
       category: 'FP&A & corporate governance',
-      desc: 'Automates multi-department budget verification by comparing proposed operational budgets against historical expenditure trends and flagging unauthorized variances.',
+      desc: 'Automates multi-department budget verification by comparing proposed operational budgets against historical expenditure trends.',
       features: [
         'Departmental line-item variance and trend anomaly detection',
         'Multi-entity consolidation across subsidiaries',
-        'Flagging of duplicate, misclassified, or unauthorized line items',
-        'Executive variance presentation reports ready for review',
       ],
-      target: 'Corporate finance teams, controllers, and FP&A leaders.',
+      target: 'Corporate finance teams and controllers',
       image: '/images/hero-visual.png',
     },
     {
       id: 'interim-audit',
       title: 'Interim audit',
       category: 'Mid-cycle review',
-      desc: 'Streamlines mid-year testing cycles. Continuously samples transactions, tests internal controls, and prepares analytical review work papers ahead of annual reporting.',
+      desc: 'Streamlines mid-year testing cycles. Continuously samples transactions, tests internal controls, and prepares analytical review work papers.',
       features: [
         'Continuous automated transaction sampling across financial quarters',
-        'Analytical review procedures comparing revenue and expense trends',
-        'Early identification of control breakdown or transaction discrepancies',
         'Direct rollover of verified schedules into final year-end audit files',
       ],
-      target: 'Audit teams and corporate internal audit departments.',
+      target: 'Audit teams and corporate internal audit departments',
       image: '/images/document-processing.png',
     },
     {
@@ -84,11 +76,9 @@ export default function SolutionsPage() {
       desc: 'Turnkey software for property management firms to calculate service charges, apportion utility and maintenance costs, and model reserve funds.',
       features: [
         'Unit-level service charge allocation based on square footage',
-        'Vendor maintenance and utility cost roll-ups with historical indexing',
-        'Reserve fund and capital replacement modeling',
-        'Export of owner billing schedules and regulatory budget summaries',
+        'Automated vendor maintenance roll-ups and billing schedules',
       ],
-      target: 'Property management companies and community asset managers.',
+      target: 'Property management companies and asset managers',
       image: '/images/financial-audit.png',
     },
   ];
@@ -109,39 +99,38 @@ export default function SolutionsPage() {
           </div>
 
           {/* Heading */}
-          <div className="max-w-3xl mb-12">
+          <div className="max-w-3xl mb-10">
             <h1 className="text-4xl sm:text-5xl font-bold tracking-tight text-brand-navy leading-[1.12]">
               End-to-End Solutions
             </h1>
-            <p className="mt-4 text-base sm:text-lg text-brand-navymuted leading-relaxed">
-              Complete software that runs an entire process or financial service from start to finish. The software prepares the work, and the professional reviews and decides.
+            <p className="mt-3 text-base sm:text-lg text-brand-navymuted leading-relaxed">
+              Complete software that runs an entire financial workflow from start to finish.
             </p>
           </div>
 
           {/* Solutions Detailed List */}
-          <div className="space-y-12">
+          <div className="space-y-8">
             {solutions.map((sol, idx) => (
-              <ScrollReveal key={sol.id} delay={0.08}>
-                <div className="bg-white rounded-2xl p-6 sm:p-8 border border-brand-border">
+              <ScrollReveal key={sol.id} delay={0.06}>
+                <div className="bg-white rounded-xl p-5 sm:p-7 border border-brand-border">
                   <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-                    <div className="lg:col-span-6 space-y-4">
+                    <div className="lg:col-span-6 space-y-3">
                       <div className="text-xs font-semibold uppercase tracking-wider text-brand-teal">
                         {sol.category}
                       </div>
 
-                      <h2 className="text-2xl font-bold text-brand-navy">
+                      <h2 className="text-xl font-bold text-brand-navy">
                         {sol.title}
                       </h2>
 
-                      <p className="text-sm text-brand-navymuted leading-relaxed">
+                      <p className="text-xs sm:text-sm text-brand-navymuted leading-relaxed">
                         {sol.desc}
                       </p>
 
-                      <div className="space-y-1.5 pt-2">
+                      <div className="space-y-1 pt-1">
                         {sol.features.map((item, dIdx) => (
-                          <div key={dIdx} className="flex items-start gap-2 text-xs text-brand-navy/90 leading-relaxed">
-                            <span className="w-1.5 h-1.5 rounded-full bg-brand-green mt-1.5 shrink-0" />
-                            <span>{item}</span>
+                          <div key={dIdx} className="text-xs text-brand-navy/90 leading-relaxed">
+                            • {item}
                           </div>
                         ))}
                       </div>

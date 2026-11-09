@@ -131,12 +131,10 @@ export const DemoModal: React.FC<DemoModalProps> = ({
             </button>
 
             {isSuccess ? (
-              <div className="py-6 text-center space-y-4">
-                <div className="mx-auto w-12 h-12 rounded-full bg-brand-mint flex items-center justify-center text-brand-green">
-                  <CheckCircle2 className="w-6 h-6" />
-                </div>
+              <div className="py-4 text-center space-y-3">
+                <CheckCircle2 className="w-8 h-8 text-brand-green mx-auto" />
                 <div>
-                  <h3 className="text-xl font-bold text-brand-navy">Demo Request Received</h3>
+                  <h3 className="text-lg font-bold text-brand-navy">Demo Request Received</h3>
                   <p className="text-xs text-brand-navymuted mt-1 max-w-sm mx-auto leading-relaxed">
                     Thank you, <span className="font-semibold text-brand-navy">{formData.name}</span>. We have recorded your interest in <span className="font-semibold text-brand-teal">{formData.product}</span>.
                   </p>

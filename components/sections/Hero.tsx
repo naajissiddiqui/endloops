@@ -1,7 +1,6 @@
 'use client';
 
 import React from 'react';
-import { motion } from 'framer-motion';
 import Button from '@/components/ui/Button';
 import HeroProductVisual from './HeroProductVisual';
 
@@ -11,89 +10,54 @@ interface HeroProps {
 
 export const Hero: React.FC<HeroProps> = ({ onRequestDemo }) => {
   return (
-    <section className="relative pt-28 pb-16 md:pt-36 md:pb-24 bg-brand-offwhite border-b border-brand-border">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="max-w-4xl mx-auto text-center space-y-6">
-          {/* Subtle origin note - no pill styling */}
-          <motion.p
-            initial={{ opacity: 0, y: 10 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.4 }}
-            className="text-xs font-semibold tracking-wider uppercase text-brand-teal"
-          >
-            Built for Finance Professionals · Born from Alkazim, Dubai
-          </motion.p>
-
-          {/* Main Display Headline */}
-          <motion.h1
-            initial={{ opacity: 0, y: 15 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.08 }}
-            className="text-4xl sm:text-6xl lg:text-7xl font-bold tracking-tight text-brand-navy leading-[1.08]"
-          >
+    <section className="relative pt-24 pb-16 md:pt-32 md:pb-20 bg-brand-offwhite border-b border-brand-border">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-3xl mx-auto text-center space-y-4">
+          {/* Main Display Headline - Clean, permanent visibility */}
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-brand-navy leading-[1.15]">
             Financial Automation Built for Precision.{' '}
             <span className="text-brand-green">The Software Prepares. You Decide.</span>
-          </motion.h1>
+          </h1>
 
-          {/* Supporting Copy */}
-          <motion.p
-            initial={{ opacity: 0, y: 15 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.16 }}
-            className="text-base sm:text-lg text-brand-navymuted max-w-2xl mx-auto leading-relaxed"
-          >
-            Endloops automates repetitive financial document processing, voucher matching, and working-paper preparation. We take care of the repetitive tasks, and the final sign-off always stays with people.
-          </motion.p>
+          {/* Ultra-concise subtext */}
+          <p className="text-base sm:text-lg text-brand-navymuted max-w-xl mx-auto leading-relaxed">
+            Automate document extraction, voucher matching, and working-paper preparation. The software does the repetitive work; final sign-off always stays with you.
+          </p>
 
           {/* Dual Action CTAs */}
-          <motion.div
-            initial={{ opacity: 0, y: 15 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.24 }}
-            className="pt-2 flex flex-col sm:flex-row items-center justify-center gap-3 w-full sm:w-auto"
-          >
+          <div className="pt-2 flex flex-col sm:flex-row items-center justify-center gap-3 w-full sm:w-auto">
             <Button
               variant="teal"
-              size="lg"
+              size="md"
               onClick={onRequestDemo}
-              className="w-full sm:w-auto text-sm font-semibold px-6 py-3"
+              className="w-full sm:w-auto text-sm px-6 py-2.5 font-medium"
             >
               Request a Demo
             </Button>
             <Button
               variant="secondary"
-              size="lg"
+              size="md"
               href="#solutions"
-              className="w-full sm:w-auto text-sm font-semibold px-6 py-3"
+              className="w-full sm:w-auto text-sm px-6 py-2.5 font-medium"
             >
               Explore Solutions &amp; Tools
             </Button>
-          </motion.div>
+          </div>
 
-          {/* Clean Trust Statements - Exact 3 items requested */}
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.6, delay: 0.32 }}
-            className="pt-4 flex flex-wrap items-center justify-center gap-y-2 gap-x-6 text-xs text-brand-navy/70"
-          >
+          {/* Clean minimal trust points */}
+          <div className="pt-2 flex flex-wrap items-center justify-center gap-x-4 gap-y-1.5 text-xs text-brand-navymuted">
             <span>Document extraction and review</span>
-            <span className="text-brand-border hidden sm:inline">•</span>
+            <span className="text-brand-border">•</span>
             <span>Automated matching and validation</span>
-            <span className="text-brand-border hidden sm:inline">•</span>
+            <span className="text-brand-border">•</span>
             <span>Human-controlled final approval</span>
-          </motion.div>
+          </div>
         </div>
 
         {/* Rebuilt Realistic Product Visual */}
-        <motion.div
-          initial={{ opacity: 0, y: 25 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.4 }}
-          className="mt-12 sm:mt-16 max-w-5xl mx-auto"
-        >
+        <div className="mt-10 sm:mt-14 max-w-4xl mx-auto">
           <HeroProductVisual />
-        </motion.div>
+        </div>
       </div>
     </section>
   );

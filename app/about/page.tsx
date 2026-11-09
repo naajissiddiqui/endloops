@@ -28,36 +28,33 @@ export default function AboutPage() {
           </div>
 
           {/* Heading */}
-          <div className="max-w-3xl mb-12">
+          <div className="max-w-3xl mb-10">
             <h1 className="text-4xl sm:text-5xl font-bold tracking-tight text-brand-navy leading-[1.12]">
               About Endloops
             </h1>
-            <p className="mt-4 text-base sm:text-lg text-brand-navymuted leading-relaxed">
-              Originated from the technology department of an accounting and audit firm in Dubai, built for financial professionals across the GCC region and beyond.
+            <p className="mt-3 text-base sm:text-lg text-brand-navymuted leading-relaxed">
+              Financial automation rooted in practical accounting and audit workflows.
             </p>
           </div>
 
           {/* Heritage & Narrative */}
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
-            <div className="lg:col-span-7 space-y-5 text-sm sm:text-base text-brand-navymuted leading-relaxed">
-              <h2 className="text-2xl font-bold text-brand-navy">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+            <div className="lg:col-span-7 space-y-4 text-sm text-brand-navymuted leading-relaxed">
+              <h2 className="text-xl font-bold text-brand-navy">
                 Who we are
               </h2>
               <p>
-                <strong className="text-brand-navy">Alkazim</strong> is an accounting and audit firm based in Dubai. Over the years, its technology department built software that automates financial work. That department is now <strong className="text-brand-navy">Endloops</strong>, a company that builds automation for Financial Professionals.
+                Endloops originated from the technology team of an established accounting and audit firm in Dubai. We build focused software that eliminates repetitive financial work for auditors, finance teams, and property management companies.
               </p>
               <p>
-                Our users are accountants, auditors, finance teams, and property management companies. Their work is detailed and time-sensitive, and they rely on tools they can trust. For them, reliability and clarity matter as much as appearance.
+                Our users handle detailed, time-sensitive financial operations where precision is critical. We build tools that are reliable, clear, and focused on practical utility.
               </p>
 
-              <h3 className="text-xl font-bold text-brand-navy pt-2">
-                The need we address
+              <h3 className="text-lg font-bold text-brand-navy pt-2">
+                Our approach
               </h3>
               <p>
-                Much of a finance professional&apos;s day goes into tasks that software can handle. This work is repetitive and time-consuming, leaves room for error, and takes attention away from judgement and from clients.
-              </p>
-              <p>
-                Our approach is simple: <strong className="text-brand-navy">the software prepares the work, and the professional reviews and decides.</strong> We take care of the repetitive tasks, and the final sign-off always stays with people.
+                <strong className="text-brand-navy">The software prepares the work, and the professional reviews and decides.</strong> Repetitive extraction, matching, and drafting are automated, while final sign-off always stays with people.
               </p>
 
               <div className="pt-2 flex items-center gap-2 text-xs font-semibold text-brand-navy">
@@ -66,25 +63,25 @@ export default function AboutPage() {
               </div>
             </div>
 
-            <div className="lg:col-span-5 space-y-6">
-              <div className="bg-brand-navy text-white rounded-2xl p-6 sm:p-7 space-y-3">
-                <h3 className="text-lg font-bold">Where we are heading</h3>
+            <div className="lg:col-span-5 space-y-5">
+              <div className="bg-brand-navy text-white rounded-xl p-5 sm:p-6 space-y-2.5">
+                <h3 className="text-base font-bold">Our ambition</h3>
                 <p className="text-xs sm:text-sm text-slate-300 leading-relaxed">
-                  Endloops is a young company with a clear ambition: to become the trusted automation partner for accounting, audit and property finance teams in the GCC region and beyond. We are growing our engineering, design and quality capabilities to get there.
+                  To become the trusted automation partner for accounting, audit, and property finance teams across the GCC region and beyond.
                 </p>
               </div>
 
-              <div className="bg-white rounded-2xl p-6 sm:p-7 border border-brand-border space-y-3">
-                <h4 className="text-sm font-bold text-brand-navy">Our core principle</h4>
+              <div className="bg-white rounded-xl p-5 sm:p-6 border border-brand-border space-y-2.5">
+                <h4 className="text-sm font-bold text-brand-navy">Core principle</h4>
                 <p className="text-xs text-brand-navymuted leading-relaxed">
-                  The software takes care of data extraction, document matching, and draft preparation. The final review and sign-off authority strictly stays with qualified people.
+                  The software takes care of data extraction, document matching, and draft preparation. Final approval strictly stays with qualified people.
                 </p>
                 <div className="pt-2">
                   <Button
                     variant="teal"
                     size="sm"
                     onClick={() => setIsDemoModalOpen(true)}
-                    className="w-full text-xs"
+                    className="w-full text-xs font-medium"
                   >
                     Request a Demonstration
                   </Button>

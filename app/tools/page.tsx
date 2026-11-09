@@ -23,87 +23,69 @@ export default function ToolsPage() {
       id: 'po-extraction',
       title: 'Purchase-order extraction',
       status: 'In active use',
-      statusType: 'live',
-      desc: 'Extracts line items, quantities, agreed unit rates, and vendor details from purchase orders. Formats data for direct cross-checking against supplier invoices.',
+      desc: 'Extracts line items, quantities, agreed unit rates, and vendor details from purchase orders. Formats data for direct cross-checking against invoices.',
       features: [
         'Line-item itemization and subtotal verification',
-        'Direct mapping to vendor records and purchase references',
-        'Automatic detection of currency exchange rates and VAT calculations',
         'Direct link back to original purchase-order document',
       ],
-      inputs: 'PDFs, scanned purchase orders, image files',
-      output: 'Structured tabular data, CSV, or direct ERP push',
+      inputs: 'PDFs, scanned POs',
+      output: 'Structured tabular data / ERP export',
     },
     {
       id: 'vouching-automation',
       title: 'Vouching automation',
       status: 'In active use',
-      statusType: 'live',
-      desc: 'Substantiates general ledger entries by matching and validating supporting third-party vouchers, commercial tax invoices, and bank payment records automatically.',
+      desc: 'Substantiates general ledger entries by matching and validating supporting third-party vouchers, invoices, and bank records automatically.',
       features: [
         'Multi-way cross-verification against GL transaction logs',
-        'Automated voucher sampling based on reviewer criteria',
-        'Instant flagging of missing or incomplete supporting documentation',
         'Generates fully referenced vouching schedules for review',
       ],
-      inputs: 'General ledger transaction batches & voucher folders',
+      inputs: 'GL batches & voucher folders',
       output: 'Vouched working schedule with exception notes',
     },
     {
       id: 'expense-working',
       title: 'Expense working automation',
       status: 'In active use',
-      statusType: 'live',
-      desc: 'Converts unstructured stacks of corporate expense receipts, hotel bills, and utility slips into categorized expense schedules with tax computations.',
+      desc: 'Converts unstructured corporate expense receipts, hotel bills, and utility slips into categorized expense schedules with tax computations.',
       features: [
         'Expense classification by standard chart of accounts categories',
-        'Standard 5% VAT input validation and tax breakdown',
-        'Identification of duplicate expense submissions',
         'Prepares consolidated expense schedules for review',
       ],
-      inputs: 'Card statements, receipts, and expense vouchers',
-      output: 'Categorized tax expense schedule with source references',
+      inputs: 'Card statements, receipts, and vouchers',
+      output: 'Categorized tax expense schedule',
     },
     {
       id: 'financial-report-review',
       title: 'Financial report review',
       status: 'In development',
-      statusType: 'dev',
-      desc: 'Automated review of draft financial statements. Validates notes against balance sheet lines, checks statement mathematical footings, and flags disclosure discrepancies.',
+      desc: 'Automated review of draft financial statements. Validates notes against balance sheet lines and checks statement mathematical footings.',
       features: [
         'Mathematical footings and cross-statement consistency checks',
         'Note-to-statement reference and number matching',
-        'Standard disclosure consistency verification',
-        'Highlights variances between draft revisions',
       ],
       inputs: 'Draft annual reports and disclosure notes',
-      output: 'Footing audit matrix & cross-reference discrepancy report',
+      output: 'Footing audit matrix & discrepancy report',
     },
     {
       id: 'tender-verification',
       title: 'Tender verification',
       status: 'In active use',
-      statusType: 'live',
-      desc: 'Parses competing supplier proposals and creates an objective, line-by-line comparative pricing matrix. Highlights outlying rates, unquoted items, and specification deviations.',
+      desc: 'Parses competing supplier proposals and creates an objective comparative pricing matrix. Highlights outlying rates and unquoted items.',
       features: [
         'Side-by-side vendor quotation pricing comparison',
         'Outlier and abnormal price variance identification',
-        'Scope compliance check flagging unquoted line items',
-        'Comparative matrix export ready for procurement committees',
       ],
       inputs: 'Vendor tender quotes and RFP schedules',
-      output: 'Comparative quote evaluation matrix & summary report',
+      output: 'Comparative quote evaluation matrix',
     },
     {
       id: 'reconciliation',
       title: 'Reconciliation',
       status: 'In development',
-      statusType: 'dev',
       desc: 'Matching engine for comparing bank feeds, payment gateway settlements, intercompany accounts, and core accounting ledgers.',
       features: [
         'Rule-based matching across high-volume ledger transactions',
-        'Multi-currency conversions and processing fee apportionments',
-        'Isolates timing differences and outstanding items',
         'Produces clear bank and ledger reconciliation schedules',
       ],
       inputs: 'Bank feeds, payment merchant files, GL accounts',
@@ -127,12 +109,12 @@ export default function ToolsPage() {
           </div>
 
           {/* Heading */}
-          <div className="max-w-3xl mb-12">
+          <div className="max-w-3xl mb-10">
             <h1 className="text-4xl sm:text-5xl font-bold tracking-tight text-brand-navy leading-[1.12]">
               Standalone Financial Tools
             </h1>
-            <p className="mt-4 text-base sm:text-lg text-brand-navymuted leading-relaxed">
-              Focused tools designed to solve one specific need and operate independently. Some are already in active use, while others are in development.
+            <p className="mt-3 text-base sm:text-lg text-brand-navymuted leading-relaxed">
+              Focused tools designed to solve one specific need and operate independently.
             </p>
           </div>
 
@@ -144,11 +126,7 @@ export default function ToolsPage() {
                   <div className="space-y-3">
                     <div className="flex items-center justify-between text-xs">
                       <span className="font-semibold text-brand-navy">Tool 0{idx + 1}</span>
-                      <span
-                        className={`font-medium ${
-                          tool.statusType === 'live' ? 'text-brand-green' : 'text-brand-purple'
-                        }`}
-                      >
+                      <span className="font-mono text-[11px] text-brand-navymuted">
                         {tool.status}
                       </span>
                     </div>
@@ -161,11 +139,10 @@ export default function ToolsPage() {
                       {tool.desc}
                     </p>
 
-                    <div className="space-y-1.5 pt-2">
+                    <div className="space-y-1 pt-1">
                       {tool.features.map((f, fIdx) => (
-                        <div key={fIdx} className="text-xs text-brand-navy/90 flex items-start gap-1.5 leading-relaxed">
-                          <span className="w-1 h-1 rounded-full bg-brand-green mt-2 shrink-0" />
-                          <span>{f}</span>
+                        <div key={fIdx} className="text-xs text-brand-navy/90 leading-relaxed">
+                          • {f}
                         </div>
                       ))}
                     </div>

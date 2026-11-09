@@ -28,25 +28,25 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
     ref
   ) => {
     const baseStyles =
-      'inline-flex items-center justify-center font-medium rounded-xl transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none active:scale-[0.98] select-none';
+      'inline-flex items-center justify-center font-medium rounded-lg transition-colors duration-150 focus:outline-none focus:ring-2 focus:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none active:scale-[0.98] select-none';
 
     const variants = {
       primary:
-        'bg-brand-navy text-white hover:bg-brand-navylight focus:ring-brand-navy shadow-soft-sm hover:shadow-soft-md',
+        'bg-brand-navy text-white hover:bg-brand-navylight focus:ring-brand-navy shadow-xs',
       secondary:
-        'bg-brand-offwhite text-brand-navy border border-brand-border hover:bg-brand-offwhitesubtle hover:border-brand-bordersubtle focus:ring-brand-teal shadow-soft-sm',
+        'bg-white text-brand-navy border border-brand-border hover:bg-brand-offwhite focus:ring-brand-teal shadow-xs',
       outline:
-        'bg-transparent text-brand-navy border border-brand-border hover:bg-white hover:border-brand-teal/50 focus:ring-brand-teal',
+        'bg-transparent text-brand-navy border border-brand-border hover:bg-white focus:ring-brand-teal',
       ghost:
-        'bg-transparent text-brand-navymuted hover:text-brand-navy hover:bg-brand-mint/40 focus:ring-brand-teal',
+        'bg-transparent text-brand-navymuted hover:text-brand-navy hover:bg-brand-offwhite focus:ring-brand-teal',
       teal:
-        'bg-gradient-to-r from-brand-green to-brand-teal text-white hover:opacity-95 shadow-soft-sm hover:shadow-glow-teal focus:ring-brand-teal',
+        'bg-brand-green text-white hover:bg-brand-teal focus:ring-brand-teal shadow-xs',
     };
 
     const sizes = {
-      sm: 'text-xs px-3.5 py-2 gap-1.5',
+      sm: 'text-xs px-3.5 py-1.5 gap-1.5',
       md: 'text-sm px-5 py-2.5 gap-2',
-      lg: 'text-base px-6 py-3.5 gap-2.5',
+      lg: 'text-base px-6 py-3 gap-2.5',
     };
 
     const combinedClasses = cn(
@@ -109,4 +109,3 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
 
 Button.displayName = 'Button';
 export default Button;
-
