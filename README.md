@@ -6,6 +6,20 @@ A modern, high-performance website for **Endloops** — financial automation sof
 
 ---
 
+## Project Note — Endloops Website
+
+I designed and developed a responsive landing page for Endloops, a financial automation company serving accountants, auditors and finance professionals. My goal was to create a digital experience that communicates the company's offerings clearly while establishing a premium, modern and trustworthy brand presence.
+
+My most important design decision was to balance visual creativity with the credibility expected from a financial technology company. I chose a minimal, typography-led design using Manrope, a light colour palette built around Endloops' green and teal branding, and subtle interactive animations. I also focused on clearly distinguishing Endloops' end-to-end solutions from its standalone tools. Particular attention was given to communicating the relationship between automated processing and human oversight, ensuring that professional judgement and final approval remain central to the experience.
+
+With more time, I would improve the interactive product demonstrations, introduce more detailed individual product pages, and further refine the mobile experience and animation performance.
+
+For development, I used React, Tailwind CSS and Framer Motion, along with selected React Bits components for navigation, animations and interactions. I used Figma for design exploration and ChatGPT and Claude as AI-assisted tools for brainstorming, visual direction, code assistance and refinement. All major design and implementation decisions were reviewed and customised throughout development.
+
+**Time invested:** Approximately 13–15 hours.
+
+---
+
 ## Brand & Philosophy
 
 Endloops operates on a singular foundational principle:
@@ -39,7 +53,7 @@ Endloops operates on a singular foundational principle:
 
 ## Page Structure & Sections
 
-1. **Header & Navigation**: Standalone Endloops logo on the left blending into the canvas, centered `PillNav` glass bar, and `SpecularButton` "Request a Demo" action.
+1. **Header & Navigation**: Standalone Endloops logo on the left blending into the canvas and centered floating `PillNav` glass navigation bar.
 2. **Hero Section (90–100vh)**: Editorial, typography-led composition with fluid display typography, dual CTAs, and cursor-responsive ethereal aqua ribbons drifting with natural inverse parallax.
 3. **Value Proposition & Interactive Workbench**: `CurtainReveal` showcase of an automated invoice-matching workbench (#INV-2025-084 vs PO-2025-0419) highlighting 2 matched items and 1 flagged freight discrepancy.
 4. **Core Capabilities**: Interactive tabbed workbench covering Document Reading, Comparison & Matching, Variance & Discrepancy Detection, Working Paper Drafting, and Batch Ingestion.

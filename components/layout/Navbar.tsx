@@ -2,10 +2,9 @@
 
 import React from 'react';
 import PillNav, { type PillNavItem } from '@/src/components/reactbits/PillNav';
-import SpecularButton from '@/src/components/reactbits/SpecularButton';
 
 interface NavbarProps {
-  onRequestDemo: () => void;
+  onRequestDemo?: () => void;
 }
 
 export const Navbar: React.FC<NavbarProps> = React.memo(({ onRequestDemo }) => {
@@ -77,7 +76,7 @@ export const Navbar: React.FC<NavbarProps> = React.memo(({ onRequestDemo }) => {
           />
         </div>
 
-        <div className="pointer-events-auto flex items-center flex-1 justify-end gap-2 sm:gap-3">
+        <div className="pointer-events-auto flex items-center flex-1 justify-end">
           <div className="md:hidden">
             <PillNav
               items={navItems}
@@ -94,54 +93,6 @@ export const Navbar: React.FC<NavbarProps> = React.memo(({ onRequestDemo }) => {
               textColor="#142B45"
               onItemClick={handleItemClick}
             />
-          </div>
-
-          <div className="hidden sm:inline-block">
-            <SpecularButton
-              size="md"
-              radius={18}
-              tint="#079B78"
-              tintOpacity={1}
-              textColor="#ffffff"
-              lineColor="#ffffff"
-              baseColor="#079B78"
-              intensity={1}
-              idleIntensity={0.35}
-              shineSize={10}
-              shineFade={34}
-              thickness={1.2}
-              glow={1}
-              followMouse={true}
-              proximity={250}
-              onClick={onRequestDemo}
-              className="font-medium text-btn"
-            >
-              Request a Demo
-            </SpecularButton>
-          </div>
-
-          <div className="inline-block sm:hidden">
-            <SpecularButton
-              size="sm"
-              radius={14}
-              tint="#079B78"
-              tintOpacity={1}
-              textColor="#ffffff"
-              lineColor="#ffffff"
-              baseColor="#079B78"
-              intensity={1}
-              idleIntensity={0.35}
-              shineSize={8}
-              shineFade={24}
-              thickness={1.1}
-              glow={1}
-              followMouse={true}
-              proximity={200}
-              onClick={onRequestDemo}
-              className="font-semibold text-xs px-3.5 py-1.5"
-            >
-              Demo
-            </SpecularButton>
           </div>
         </div>
       </div>

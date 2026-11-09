@@ -9,7 +9,6 @@ import Tools from '@/components/sections/Tools';
 import Workflow from '@/components/sections/Workflow';
 import HumanReview from '@/components/sections/HumanReview';
 import About from '@/components/sections/About';
-import FinalCTA from '@/components/sections/FinalCTA';
 import DemoModal from '@/components/ui/Modal';
 import SolutionsPage from './pages/SolutionsPage';
 import ToolsPage from './pages/ToolsPage';
@@ -82,9 +81,6 @@ export const App: React.FC = () => {
 
         {/* 9. About Endloops */}
         <About onRequestDemo={handleOpenDemoModal} />
-
-        {/* 10. Final Call to Action */}
-        <FinalCTA onRequestDemo={handleOpenDemoModal} />
       </main>
 
       {/* 11. Footer */}
