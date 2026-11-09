@@ -29,6 +29,12 @@ export const ScrollReveal: React.FC<ScrollRevealProps> = ({
   }
 
   const getInitialPosition = () => {
+    // Avoid horizontal translate overflow on mobile screens (< 768px)
+    const isMobile = typeof window !== 'undefined' && window.innerWidth < 768;
+    if (isMobile && (direction === 'left' || direction === 'right')) {
+      return { y: distance, x: 0 };
+    }
+
     switch (direction) {
       case 'up':
         return { y: distance, x: 0 };

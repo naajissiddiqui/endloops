@@ -3,11 +3,20 @@
 import React from 'react';
 import SectionHeading from '@/components/ui/SectionHeading';
 import ScrollReveal from '@/components/animations/ScrollReveal';
+import CurtainReveal from '@/components/animations/CurtainReveal';
+import HeroProductVisual from './HeroProductVisual';
 
 export const ValueProp: React.FC = () => {
   return (
-    <section className="py-16 md:py-20 bg-white border-b border-brand-border">
+    <section className="py-16 md:py-24 bg-white border-b border-brand-border">
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* First Major Visual Below Hero: Scroll-driven scale & Curtain Reveal */}
+        <div className="mb-14 sm:mb-20">
+          <CurtainReveal initialScale={1.06} initialY={40}>
+            <HeroProductVisual />
+          </CurtainReveal>
+        </div>
+
         <ScrollReveal>
           <SectionHeading
             title="The software prepares. You decide."

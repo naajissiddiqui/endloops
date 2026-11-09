@@ -43,7 +43,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onRequestDemo }) => {
   };
 
   return (
-    <header className="fixed top-3 sm:top-5 left-0 right-0 z-50 pointer-events-none px-4 sm:px-6 lg:px-8">
+    <header className="fixed top-3 sm:top-5 left-0 right-0 z-50 pointer-events-none px-4 sm:px-6 lg:px-8 overflow-x-clip">
       <div className="max-w-7xl mx-auto flex items-center justify-between gap-3">
         {/* 1. Left: Logo blending with background - NO PILL */}
         <div className="pointer-events-auto flex items-center flex-1 justify-start">

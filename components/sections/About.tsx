@@ -3,13 +3,12 @@
 import React from 'react';
 import SectionHeading from '@/components/ui/SectionHeading';
 import ScrollReveal from '@/components/animations/ScrollReveal';
-import SpecularButton from '@/src/components/reactbits/SpecularButton';
 
 interface AboutProps {
-  onRequestDemo: () => void;
+  onRequestDemo?: () => void;
 }
 
-export const About: React.FC<AboutProps> = ({ onRequestDemo }) => {
+export const About: React.FC<AboutProps> = () => {
   return (
     <section id="about" className="py-16 md:py-20 bg-white border-b border-brand-border">
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -44,28 +43,8 @@ export const About: React.FC<AboutProps> = ({ onRequestDemo }) => {
             <p className="text-body-sm text-slate-300 leading-relaxed">
               Delivering dependable, audit-tested automation for accounting, audit, and property finance teams across the GCC and beyond.
             </p>
-            <div className="pt-2">
-              <SpecularButton
-                size="sm"
-                radius={16}
-                tint="#079B78"
-                tintOpacity={1}
-                textColor="#ffffff"
-                lineColor="#20B99A"
-                baseColor="#079B78"
-                intensity={1}
-                idleIntensity={0.35}
-                shineSize={8}
-                shineFade={28}
-                thickness={1.1}
-                glow={1}
-                followMouse={true}
-                proximity={200}
-                onClick={onRequestDemo}
-                className="w-full text-btn py-2.5 font-medium"
-              >
-                Request a Demo
-              </SpecularButton>
+            <div className="pt-3 border-t border-white/10 text-label text-brand-teal font-mono">
+              Practical Fintech · Dubai
             </div>
           </div>
         </div>

@@ -1,11 +1,10 @@
 'use client';
 
 import React from 'react';
-import Button from '@/components/ui/Button';
-import HeroProductVisual from './HeroProductVisual';
+import { motion } from 'framer-motion';
 import BlurText from '@/src/components/reactbits/BlurText';
-import AnimatedContent from '@/src/components/reactbits/AnimatedContent';
 import SpecularButton from '@/src/components/reactbits/SpecularButton';
+import EtherealRibbonsBackground from '@/src/components/animations/EtherealRibbonsBackground';
 
 interface HeroProps {
   onRequestDemo: () => void;
@@ -13,90 +12,101 @@ interface HeroProps {
 
 export const Hero: React.FC<HeroProps> = ({ onRequestDemo }) => {
   return (
-    <section className="relative pt-24 pb-16 md:pt-32 md:pb-20 bg-brand-offwhite border-b border-brand-border overflow-hidden">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="max-w-3xl mx-auto text-center space-y-4">
-          {/* Main Display Headline with BlurText Animation: 64px desktop / 40px mobile, weight 600, line-height 1.08, letter-spacing -0.04em */}
-          <div className="space-y-1">
-            <BlurText
-              text="Financial Automation Built for Precision."
-              delay={30}
-              animateBy="words"
-              direction="top"
-              as="h1"
-              className="text-display font-semibold text-brand-navy tracking-tight justify-center text-center"
-            />
-            <BlurText
-              text="The Software Prepares. You Decide."
-              delay={45}
-              animateBy="words"
-              direction="top"
-              as="div"
-              color="#079B78"
-              className="text-display font-semibold text-brand-green tracking-tight justify-center text-center"
-            />
-          </div>
+    <section className="relative min-h-[90vh] lg:min-h-screen w-full flex flex-col justify-center items-center pt-28 pb-16 sm:pt-36 sm:pb-24 overflow-hidden bg-brand-offwhite">
+      {/* 1. Immersive Ethereal Aqua Wave Ribbons Parallax Background */}
+      <EtherealRibbonsBackground />
 
-          {/* Large Body: 18px desktop / 16px mobile, weight 400, line-height 1.65 */}
-          <p className="text-body-lg text-brand-navymuted max-w-xl mx-auto mt-4 leading-relaxed">
-            Automate document extraction, voucher matching, and working-paper preparation. The software does the repetitive work; final sign-off always stays with you.
-          </p>
-
-          {/* Dual Action CTAs: Button 15px, weight 500 */}
-          <div className="pt-2 flex flex-col sm:flex-row items-center justify-center gap-3 w-full sm:w-auto">
-            <SpecularButton
-              size="md"
-              radius={18}
-              tint="#079B78"
-              tintOpacity={1}
-              textColor="#ffffff"
-              lineColor="#ffffff"
-              baseColor="#079B78"
-              intensity={1}
-              idleIntensity={0.35}
-              shineSize={10}
-              shineFade={34}
-              thickness={1.2}
-              glow={1}
-              followMouse={true}
-              proximity={250}
-              onClick={onRequestDemo}
-              className="w-full sm:w-auto text-btn font-medium px-6 py-3"
-            >
-              Request a Demo
-            </SpecularButton>
-            <Button
-              variant="secondary"
-              size="md"
-              href="#solutions"
-              className="w-full sm:w-auto"
-            >
-              Explore Solutions &amp; Tools
-            </Button>
-          </div>
-
-          {/* Labels & metadata: 12px desktop / 11px mobile, weight 500, line-height 1.4 */}
-          <div className="pt-2 flex flex-wrap items-center justify-center gap-x-4 gap-y-1.5 text-label text-brand-navymuted">
-            <span>Document extraction and review</span>
-            <span className="text-brand-border">•</span>
-            <span>Automated matching and validation</span>
-            <span className="text-brand-border">•</span>
-            <span>Human-controlled final approval</span>
-          </div>
+      {/* 2. Hero Content Container */}
+      <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center flex flex-col items-center">
+        {/* Main Display Headline: Desktop 76–88px / Tablet 56–64px / Mobile 38–44px, tight leading, negative tracking */}
+        <div className="space-y-1.5 sm:space-y-2 max-w-4xl mx-auto">
+          <BlurText
+            text="Financial Work,"
+            delay={25}
+            animateBy="words"
+            direction="top"
+            as="h1"
+            className="text-hero-display text-brand-navy tracking-tighter justify-center text-center"
+          />
+          <BlurText
+            text="Without the Busywork."
+            delay={35}
+            animateBy="words"
+            direction="top"
+            as="div"
+            className="text-hero-display text-transparent bg-clip-text bg-gradient-to-r from-brand-green via-brand-teal to-brand-green tracking-tighter justify-center text-center pb-1"
+          />
         </div>
 
-        {/* Rebuilt Realistic Product Visual with AnimatedContent */}
-        <AnimatedContent
-          distance={36}
-          direction="vertical"
-          duration={0.8}
-          ease="power3.out"
-          trigger="mount"
-          className="mt-10 sm:mt-14 max-w-4xl mx-auto"
+        {/* Supporting Paragraph: Max-width ~680px */}
+        <motion.p
+          initial={{ opacity: 0, y: 14 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+          className="text-body-lg text-brand-navymuted max-w-[680px] mx-auto mt-6 sm:mt-7 leading-relaxed font-normal"
         >
-          <HeroProductVisual />
-        </AnimatedContent>
+          Automate repetitive financial tasks, streamline document reviews and prepare working papers — while keeping every final decision in professional hands.
+        </motion.p>
+
+        {/* Dual Action CTA Buttons */}
+        <motion.div
+          initial={{ opacity: 0, y: 14 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.3 }}
+          className="pt-8 sm:pt-9 flex flex-col sm:flex-row items-center justify-center gap-3.5 w-full sm:w-auto"
+        >
+          {/* Primary SpecularButton */}
+          <SpecularButton
+            size="md"
+            radius={22}
+            tint="#079B78"
+            tintOpacity={1}
+            textColor="#ffffff"
+            lineColor="#ffffff"
+            baseColor="#079B78"
+            intensity={1}
+            idleIntensity={0.35}
+            shineSize={10}
+            shineFade={34}
+            thickness={1.2}
+            glow={1}
+            followMouse={true}
+            proximity={250}
+            onClick={onRequestDemo}
+            className="w-full sm:w-auto text-btn font-medium px-8 py-3.5 shadow-sm hover:shadow transition-shadow"
+          >
+            Request a Demo
+          </SpecularButton>
+
+          {/* Secondary Explore Button */}
+          <a
+            href="#solutions"
+            className="inline-flex items-center justify-center w-full sm:w-auto px-8 py-3.5 rounded-full border border-brand-border bg-white/80 hover:bg-white text-btn font-medium text-brand-navy hover:text-brand-green shadow-xs hover:shadow-sm backdrop-blur-sm transition-all"
+          >
+            Explore Solutions
+          </a>
+        </motion.div>
+
+        {/* Subtle Trust Strip beneath CTAs */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.6, delay: 0.45 }}
+          className="pt-6 sm:pt-8 flex flex-wrap items-center justify-center gap-x-4 gap-y-1.5 text-label text-brand-navymuted"
+        >
+          <span>Document extraction and review</span>
+          <span className="text-brand-border">•</span>
+          <span>Automated matching and validation</span>
+          <span className="text-brand-border">•</span>
+          <span>Human-controlled final approval</span>
+        </motion.div>
       </div>
+
+      {/* 3. Subtle bottom horizon gradient melting into next section */}
+      <div
+        className="pointer-events-none absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-brand-offwhite via-brand-offwhite/50 to-transparent"
+        aria-hidden="true"
+      />
     </section>
   );
 };
