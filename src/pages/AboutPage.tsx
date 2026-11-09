@@ -1,14 +1,11 @@
-'use client';
-
 import React, { useState } from 'react';
-import Link from 'next/link';
 import { MapPin, ChevronRight } from 'lucide-react';
 import Navbar from '@/components/layout/Navbar';
 import Footer from '@/components/layout/Footer';
 import Button from '@/components/ui/Button';
 import DemoModal from '@/components/ui/Modal';
 
-export default function AboutPage() {
+export const AboutPage: React.FC = () => {
   const [isDemoModalOpen, setIsDemoModalOpen] = useState(false);
 
   return (
@@ -19,14 +16,14 @@ export default function AboutPage() {
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Breadcrumb */}
           <div className="flex items-center gap-2 text-label text-brand-navymuted mb-6">
-            <Link href="/" className="hover:text-brand-navy transition-colors">
+            <a href="/" className="hover:text-brand-navy transition-colors">
               Home
-            </Link>
+            </a>
             <ChevronRight className="w-3.5 h-3.5" />
             <span className="text-brand-navy font-semibold">About</span>
           </div>
 
-          {/* Heading: H1 52px desktop / 36px mobile, weight 600, line-height 1.1, letter-spacing -0.035em */}
+          {/* Heading */}
           <div className="max-w-3xl mb-10">
             <h1 className="text-h1 text-brand-navy">
               About Endloops
@@ -100,4 +97,6 @@ export default function AboutPage() {
       />
     </div>
   );
-}
+};
+
+export default AboutPage;

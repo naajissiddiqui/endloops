@@ -1,7 +1,6 @@
 'use client';
 
 import React from 'react';
-import Image from 'next/image';
 import SectionHeading from '@/components/ui/SectionHeading';
 import CurtainReveal from '@/components/animations/CurtainReveal';
 import ScrollReveal from '@/components/animations/ScrollReveal';
@@ -49,13 +48,11 @@ export const Workflow: React.FC = () => {
                 <span>Process Architecture</span>
               </div>
               <div className="relative w-full aspect-[16/9] min-h-[200px] sm:min-h-[300px] lg:min-h-[400px]">
-                <Image
+                <img
                   src="/images/workflow-illustration.png"
                   alt="Endloops Workflow Architecture"
-                  fill
-                  priority
-                  className="object-cover"
-                  sizes="(max-width: 1280px) 100vw, 1000px"
+                  className="w-full h-full object-cover"
+                  loading="eager"
                 />
               </div>
             </div>

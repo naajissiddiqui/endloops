@@ -1,8 +1,4 @@
-'use client';
-
 import React, { useState } from 'react';
-import Image from 'next/image';
-import Link from 'next/link';
 import { ChevronRight } from 'lucide-react';
 import Navbar from '@/components/layout/Navbar';
 import Footer from '@/components/layout/Footer';
@@ -11,7 +7,7 @@ import DemoModal from '@/components/ui/Modal';
 import CurtainReveal from '@/components/animations/CurtainReveal';
 import ScrollReveal from '@/components/animations/ScrollReveal';
 
-export default function SolutionsPage() {
+export const SolutionsPage: React.FC = () => {
   const [isDemoModalOpen, setIsDemoModalOpen] = useState(false);
   const [activeModalProduct, setActiveModalProduct] = useState('Financial Audit Automation');
 
@@ -89,16 +85,16 @@ export default function SolutionsPage() {
 
       <main className="flex-1 pt-28 pb-20 md:pt-36 md:pb-28">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-          {/* Breadcrumb: Labels 12px / 11px */}
+          {/* Breadcrumb */}
           <div className="flex items-center gap-2 text-label text-brand-navymuted mb-6">
-            <Link href="/" className="hover:text-brand-navy transition-colors">
+            <a href="/" className="hover:text-brand-navy transition-colors">
               Home
-            </Link>
+            </a>
             <ChevronRight className="w-3.5 h-3.5" />
             <span className="text-brand-navy font-semibold">End-to-End Solutions</span>
           </div>
 
-          {/* Heading: H1 52px desktop / 36px mobile, weight 600, line-height 1.1, letter-spacing -0.035em */}
+          {/* Heading */}
           <div className="max-w-3xl mb-10">
             <h1 className="text-h1 text-brand-navy">
               End-to-End Solutions
@@ -110,7 +106,7 @@ export default function SolutionsPage() {
 
           {/* Solutions Detailed List */}
           <div className="space-y-8">
-            {solutions.map((sol, idx) => (
+            {solutions.map((sol) => (
               <ScrollReveal key={sol.id} delay={0.06}>
                 <div className="bg-white rounded-xl p-5 sm:p-7 border border-brand-border">
                   <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
@@ -119,7 +115,6 @@ export default function SolutionsPage() {
                         {sol.category}
                       </div>
 
-                      {/* H2/H3 Heading */}
                       <h2 className="text-h3 text-brand-navy">
                         {sol.title}
                       </h2>
@@ -151,13 +146,11 @@ export default function SolutionsPage() {
                     <div className="lg:col-span-6">
                       <CurtainReveal initialScale={1.08} initialY={30}>
                         <div className="relative rounded-xl overflow-hidden bg-brand-offwhite border border-brand-border aspect-[16/10]">
-                          <Image
+                          <img
                             src={sol.image}
                             alt={sol.title}
-                            fill
-                            priority={idx < 2}
-                            className="object-cover"
-                            sizes="(max-width: 1024px) 100vw, 500px"
+                            className="w-full h-full object-cover"
+                            loading="eager"
                           />
                         </div>
                       </CurtainReveal>
@@ -179,4 +172,6 @@ export default function SolutionsPage() {
       />
     </div>
   );
-}
+};
+
+export default SolutionsPage;

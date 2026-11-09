@@ -1,7 +1,6 @@
 'use client';
 
 import React, { useState } from 'react';
-import Image from 'next/image';
 import { ArrowRight } from 'lucide-react';
 import SectionHeading from '@/components/ui/SectionHeading';
 import Button from '@/components/ui/Button';
@@ -89,13 +88,11 @@ export const Solutions: React.FC<SolutionsProps> = ({ onRequestDemo }) => {
                 <span>Workflow Overview</span>
               </div>
               <div className="relative w-full aspect-[16/9] min-h-[200px] sm:min-h-[300px] lg:min-h-[400px]">
-                <Image
+                <img
                   src="/images/financial-audit.png"
                   alt="Endloops Financial Audit Workflow"
-                  fill
-                  priority
-                  className="object-cover"
-                  sizes="(max-width: 1280px) 100vw, 1000px"
+                  className="w-full h-full object-cover"
+                  loading="eager"
                 />
               </div>
             </div>

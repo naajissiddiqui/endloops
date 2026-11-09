@@ -1,6 +1,4 @@
-'use client';
-
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Navbar from '@/components/layout/Navbar';
 import Footer from '@/components/layout/Footer';
 import Hero from '@/components/sections/Hero';
@@ -13,12 +11,24 @@ import HumanReview from '@/components/sections/HumanReview';
 import About from '@/components/sections/About';
 import FinalCTA from '@/components/sections/FinalCTA';
 import DemoModal from '@/components/ui/Modal';
+import SolutionsPage from './pages/SolutionsPage';
+import ToolsPage from './pages/ToolsPage';
+import AboutPage from './pages/AboutPage';
 
-export default function Home() {
+export const App: React.FC = () => {
+  const [currentPath, setCurrentPath] = useState(window.location.pathname);
   const [isDemoModalOpen, setIsDemoModalOpen] = useState(false);
   const [selectedProductForDemo, setSelectedProductForDemo] = useState(
     'Financial Audit Automation'
   );
+
+  useEffect(() => {
+    const handlePopState = () => {
+      setCurrentPath(window.location.pathname);
+    };
+    window.addEventListener('popstate', handlePopState);
+    return () => window.removeEventListener('popstate', handlePopState);
+  }, []);
 
   const handleOpenDemoModal = (productName?: string) => {
     if (productName) {
@@ -30,6 +40,18 @@ export default function Home() {
   const handleCloseDemoModal = () => {
     setIsDemoModalOpen(false);
   };
+
+  if (currentPath === '/solutions') {
+    return <SolutionsPage />;
+  }
+
+  if (currentPath === '/tools') {
+    return <ToolsPage />;
+  }
+
+  if (currentPath === '/about') {
+    return <AboutPage />;
+  }
 
   return (
     <div className="flex flex-col min-h-screen bg-brand-offwhite">
@@ -58,7 +80,7 @@ export default function Home() {
         {/* 8. Human Review and Final Approval */}
         <HumanReview />
 
-        {/* 9. About Endloops (Origins & Alkazim) */}
+        {/* 9. About Endloops */}
         <About onRequestDemo={() => handleOpenDemoModal()} />
 
         {/* 10. Final Call to Action */}
@@ -76,4 +98,6 @@ export default function Home() {
       />
     </div>
   );
-}
+};
+
+export default App;
