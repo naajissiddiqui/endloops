@@ -67,14 +67,35 @@ Endloops is designed to eliminate the mechanical drudgery of document review—e
 | **Lavender** | `#F0EEFF` | Subtle background tint for secondary tags |
 | **Border** | `#E8EFED` | Structural hairline dividers and card outlines |
 
-### 2.3 Typography: Manrope
-Endloops uses **Manrope** across all desktop and mobile typography.
-- **Display 1 (Hero)**: `text-4xl sm:text-6xl lg:text-7xl font-bold tracking-tight text-[#142B45] leading-[1.08]`
-- **Display 2 (Section Title)**: `text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-[#142B45] leading-[1.15]`
-- **Section Introduction**: `text-base sm:text-lg text-[#4A607A] leading-relaxed max-w-2xl`
-- **Subheadings**: `text-lg sm:text-xl font-bold text-[#142B45]`
-- **Body Regular**: `text-sm sm:text-base text-[#4A607A] leading-relaxed`
-- **Captions & Metadata**: `text-xs font-medium text-[#4A607A]`
+### 2.3 Typography System: Manrope
+Endloops enforces a rigorous, consistent typography system using **Manrope** across the entire website. Weights 400, 500, 600, and 700 are used exclusively where specified.
+
+#### Desktop Scale (>= 768px):
+- **Hero / Display**: 64px, weight 600, line-height 1.08, letter-spacing -0.04em (`text-display`)
+- **H1**: 52px, weight 600, line-height 1.1, letter-spacing -0.035em (`text-h1`)
+- **H2**: 42px, weight 600, line-height 1.15, letter-spacing -0.03em (`text-h2`)
+- **H3**: 28px, weight 600, line-height 1.25, letter-spacing -0.02em (`text-h3`)
+- **H4 / Card headings**: 21px, weight 600, line-height 1.3 (`text-h4`)
+- **Large body**: 18px, weight 400, line-height 1.65 (`text-body-lg`)
+- **Normal body**: 16px, weight 400, line-height 1.6 (`text-body-base`)
+- **Small body**: 14px, weight 400, line-height 1.5 (`text-body-sm`)
+- **Labels and metadata**: 12px, weight 500, line-height 1.4 (`text-label`)
+- **Buttons**: 15px, weight 500 (`text-btn`)
+
+#### Mobile Scale (<= 767px):
+- **Hero**: 40px, weight 600, line-height 1.08, letter-spacing -0.04em
+- **H1**: 36px, weight 600, line-height 1.1, letter-spacing -0.035em
+- **H2**: 30px, weight 600, line-height 1.15, letter-spacing -0.03em
+- **H3**: 24px, weight 600, line-height 1.25, letter-spacing -0.02em
+- **H4**: 19px, weight 600, line-height 1.3
+- **Large body**: 16px, weight 400, line-height 1.65
+- **Normal body**: 15px, weight 400, line-height 1.6
+- **Small text**: 13px, weight 400, line-height 1.5
+- **Labels**: 11px, weight 500, line-height 1.4
+- **Buttons**: 15px, weight 500
+
+#### Fluid Typography Formula:
+Responsive scaling is implemented using CSS `clamp()` functions with linear interpolation between mobile (390px) and desktop (1280px) breakpoints, ensuring harmonious typography on all intermediate screens. Negative letter spacing is maintained on large display headings, uppercase decorative treatments are avoided, and line lengths are strictly controlled (`max-w-xl` to `max-w-2xl`).
 
 ---
 

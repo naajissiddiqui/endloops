@@ -100,20 +100,20 @@ export default function ToolsPage() {
       <main className="flex-1 pt-28 pb-20 md:pt-36 md:pb-28">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Breadcrumb */}
-          <div className="flex items-center gap-2 text-xs text-brand-navymuted mb-6">
+          <div className="flex items-center gap-2 text-label text-brand-navymuted mb-6">
             <Link href="/" className="hover:text-brand-navy transition-colors">
               Home
             </Link>
             <ChevronRight className="w-3.5 h-3.5" />
-            <span className="text-brand-navy font-medium">Standalone Tools</span>
+            <span className="text-brand-navy font-semibold">Standalone Tools</span>
           </div>
 
-          {/* Heading */}
+          {/* Heading: H1 52px desktop / 36px mobile, weight 600, line-height 1.1, letter-spacing -0.035em */}
           <div className="max-w-3xl mb-10">
-            <h1 className="text-4xl sm:text-5xl font-bold tracking-tight text-brand-navy leading-[1.12]">
+            <h1 className="text-h1 text-brand-navy">
               Standalone Financial Tools
             </h1>
-            <p className="mt-3 text-base sm:text-lg text-brand-navymuted leading-relaxed">
+            <p className="mt-3 md:mt-4 text-body-lg text-brand-navymuted leading-relaxed max-w-2xl">
               Focused tools designed to solve one specific need and operate independently.
             </p>
           </div>
@@ -124,44 +124,45 @@ export default function ToolsPage() {
               <ScrollReveal key={tool.id} delay={idx * 0.05}>
                 <div className="h-full rounded-xl p-6 bg-white border border-brand-border flex flex-col justify-between">
                   <div className="space-y-3">
-                    <div className="flex items-center justify-between text-xs">
-                      <span className="font-semibold text-brand-navy">Tool 0{idx + 1}</span>
-                      <span className="font-mono text-[11px] text-brand-navymuted">
+                    <div className="flex items-center justify-between text-label text-brand-navymuted">
+                      <span>Tool 0{idx + 1}</span>
+                      <span className="font-mono">
                         {tool.status}
                       </span>
                     </div>
 
-                    <h2 className="text-lg font-bold text-brand-navy">
+                    {/* Card heading: H4 21px desktop / 19px mobile, weight 600, line-height 1.3 */}
+                    <h2 className="text-h4 text-brand-navy">
                       {tool.title}
                     </h2>
 
-                    <p className="text-xs text-brand-navymuted leading-relaxed">
+                    <p className="text-body-sm text-brand-navymuted leading-relaxed">
                       {tool.desc}
                     </p>
 
                     <div className="space-y-1 pt-1">
                       {tool.features.map((f, fIdx) => (
-                        <div key={fIdx} className="text-xs text-brand-navy/90 leading-relaxed">
+                        <div key={fIdx} className="text-body-sm text-brand-navy/90 leading-relaxed">
                           • {f}
                         </div>
                       ))}
                     </div>
                   </div>
 
-                  <div className="pt-4 mt-4 border-t border-brand-border space-y-2 text-[11px] text-brand-navymuted">
+                  <div className="pt-4 mt-4 border-t border-brand-border space-y-2 text-label text-brand-navymuted">
                     <div>
-                      <span className="font-medium text-brand-navy">Inputs: </span>
+                      <span className="font-semibold text-brand-navy">Inputs: </span>
                       {tool.inputs}
                     </div>
                     <div>
-                      <span className="font-medium text-brand-navy">Output: </span>
+                      <span className="font-semibold text-brand-navy">Output: </span>
                       {tool.output}
                     </div>
                     <Button
                       variant="teal"
                       size="sm"
                       onClick={() => openDemo(tool.title)}
-                      className="w-full text-xs mt-2"
+                      className="w-full mt-2"
                     >
                       Inquire About Tool
                     </Button>

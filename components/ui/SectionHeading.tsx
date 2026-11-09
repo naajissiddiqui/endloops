@@ -21,7 +21,7 @@ export const SectionHeading: React.FC<SectionHeadingProps> = ({
   return (
     <div
       className={cn(
-        'max-w-3xl mb-10 md:mb-14',
+        'max-w-3xl mb-8 md:mb-12',
         isCenter ? 'mx-auto text-center' : 'text-left',
         className
       )}
@@ -29,18 +29,23 @@ export const SectionHeading: React.FC<SectionHeadingProps> = ({
       {eyebrow && (
         <div
           className={cn(
-            'text-xs font-semibold uppercase tracking-wider text-brand-teal mb-3',
+            'text-label font-medium text-brand-teal mb-2 md:mb-2.5',
             isCenter ? 'text-center' : 'text-left'
           )}
         >
           {eyebrow}
         </div>
       )}
-      <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-brand-navy leading-[1.15]">
+      <h2 className="text-h2 text-brand-navy">
         {title}
       </h2>
       {description && (
-        <p className="mt-4 text-base sm:text-lg text-brand-navymuted leading-relaxed">
+        <p
+          className={cn(
+            'mt-3 md:mt-4 text-body-lg text-brand-navymuted max-w-2xl',
+            isCenter ? 'mx-auto' : ''
+          )}
+        >
           {description}
         </p>
       )}

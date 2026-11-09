@@ -44,9 +44,9 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
     };
 
     const sizes = {
-      sm: 'text-xs px-3.5 py-1.5 gap-1.5',
-      md: 'text-sm px-5 py-2.5 gap-2',
-      lg: 'text-base px-6 py-3 gap-2.5',
+      sm: 'text-body-sm px-3.5 py-1.5 gap-1.5',
+      md: 'text-btn px-5 py-2.5 gap-2',
+      lg: 'text-body px-6 py-3 gap-2.5',
     };
 
     const combinedClasses = cn(

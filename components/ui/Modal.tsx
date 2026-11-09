@@ -75,7 +75,6 @@ export const DemoModal: React.FC<DemoModalProps> = ({
     if (!validate()) return;
 
     setIsSubmitting(true);
-    // Simulate frontend demonstration request
     setTimeout(() => {
       setIsSubmitting(false);
       setIsSuccess(true);
@@ -134,35 +133,36 @@ export const DemoModal: React.FC<DemoModalProps> = ({
               <div className="py-4 text-center space-y-3">
                 <CheckCircle2 className="w-8 h-8 text-brand-green mx-auto" />
                 <div>
-                  <h3 className="text-lg font-bold text-brand-navy">Demo Request Received</h3>
-                  <p className="text-xs text-brand-navymuted mt-1 max-w-sm mx-auto leading-relaxed">
+                  <h3 className="text-h3 text-brand-navy">Demo Request Received</h3>
+                  <p className="text-body-sm text-brand-navymuted mt-1 max-w-sm mx-auto leading-relaxed">
                     Thank you, <span className="font-semibold text-brand-navy">{formData.name}</span>. We have recorded your interest in <span className="font-semibold text-brand-teal">{formData.product}</span>.
                   </p>
                 </div>
 
-                <div className="bg-brand-offwhite rounded-xl p-3.5 border border-brand-border text-left text-xs text-brand-navymuted leading-relaxed">
+                <div className="bg-brand-offwhite rounded-xl p-3.5 border border-brand-border text-left text-body-sm text-brand-navymuted leading-relaxed">
                   <div className="font-semibold text-brand-navy mb-1">Demonstration Notice</div>
                   This website is a demonstration build. The form has been verified and processed locally without sending personal data to an external server.
                 </div>
 
-                <Button variant="primary" onClick={handleReset} className="w-full text-sm">
+                <Button variant="primary" size="md" onClick={handleReset} className="w-full">
                   Return to Website
                 </Button>
               </div>
             ) : (
               <div>
                 <div className="mb-6">
-                  <h3 id="modal-title" className="text-xl sm:text-2xl font-bold text-brand-navy">
+                  {/* H3 Heading: 28px desktop / 24px mobile, weight 600 */}
+                  <h3 id="modal-title" className="text-h3 text-brand-navy">
                     Request an Endloops Demo
                   </h3>
-                  <p className="text-xs sm:text-sm text-brand-navymuted mt-1">
+                  <p className="text-body-sm text-brand-navymuted mt-1">
                     See how Endloops prepares audit schedules and financial verifications for your team.
                   </p>
                 </div>
 
                 <form onSubmit={handleSubmit} className="space-y-4">
                   <div>
-                    <label className="block text-xs font-medium text-brand-navy mb-1">
+                    <label className="block text-label font-medium text-brand-navy mb-1">
                       Full Name *
                     </label>
                     <div className="relative">
@@ -174,17 +174,17 @@ export const DemoModal: React.FC<DemoModalProps> = ({
                         value={formData.name}
                         onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                         placeholder="e.g. Sarah Al-Hashimi"
-                        className={`w-full pl-9 pr-3.5 py-2 text-sm rounded-lg border bg-brand-offwhite/50 text-brand-navy placeholder:text-brand-navymuted/60 focus:bg-white focus:outline-none focus:ring-2 focus:ring-brand-teal transition-all ${
+                        className={`w-full pl-9 pr-3.5 py-2 text-body rounded-lg border bg-brand-offwhite/50 text-brand-navy placeholder:text-brand-navymuted/60 focus:bg-white focus:outline-none focus:ring-2 focus:ring-brand-teal transition-all ${
                           errors.name ? 'border-red-400 focus:ring-red-400' : 'border-brand-border'
                         }`}
                       />
                     </div>
-                    {errors.name && <p className="text-xs text-red-500 mt-1">{errors.name}</p>}
+                    {errors.name && <p className="text-label text-red-500 mt-1">{errors.name}</p>}
                   </div>
 
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div>
-                      <label className="block text-xs font-medium text-brand-navy mb-1">
+                      <label className="block text-label font-medium text-brand-navy mb-1">
                         Work Email *
                       </label>
                       <div className="relative">
@@ -196,16 +196,16 @@ export const DemoModal: React.FC<DemoModalProps> = ({
                           value={formData.email}
                           onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                           placeholder="sarah@firm.ae"
-                          className={`w-full pl-9 pr-3.5 py-2 text-sm rounded-lg border bg-brand-offwhite/50 text-brand-navy placeholder:text-brand-navymuted/60 focus:bg-white focus:outline-none focus:ring-2 focus:ring-brand-teal transition-all ${
+                          className={`w-full pl-9 pr-3.5 py-2 text-body rounded-lg border bg-brand-offwhite/50 text-brand-navy placeholder:text-brand-navymuted/60 focus:bg-white focus:outline-none focus:ring-2 focus:ring-brand-teal transition-all ${
                             errors.email ? 'border-red-400 focus:ring-red-400' : 'border-brand-border'
                           }`}
                         />
                       </div>
-                      {errors.email && <p className="text-xs text-red-500 mt-1">{errors.email}</p>}
+                      {errors.email && <p className="text-label text-red-500 mt-1">{errors.email}</p>}
                     </div>
 
                     <div>
-                      <label className="block text-xs font-medium text-brand-navy mb-1">
+                      <label className="block text-label font-medium text-brand-navy mb-1">
                         Company / Firm *
                       </label>
                       <div className="relative">
@@ -217,24 +217,24 @@ export const DemoModal: React.FC<DemoModalProps> = ({
                           value={formData.company}
                           onChange={(e) => setFormData({ ...formData, company: e.target.value })}
                           placeholder="e.g. Al Mazrouei Audit"
-                          className={`w-full pl-9 pr-3.5 py-2 text-sm rounded-lg border bg-brand-offwhite/50 text-brand-navy placeholder:text-brand-navymuted/60 focus:bg-white focus:outline-none focus:ring-2 focus:ring-brand-teal transition-all ${
+                          className={`w-full pl-9 pr-3.5 py-2 text-body rounded-lg border bg-brand-offwhite/50 text-brand-navy placeholder:text-brand-navymuted/60 focus:bg-white focus:outline-none focus:ring-2 focus:ring-brand-teal transition-all ${
                             errors.company ? 'border-red-400 focus:ring-red-400' : 'border-brand-border'
                           }`}
                         />
                       </div>
-                      {errors.company && <p className="text-xs text-red-500 mt-1">{errors.company}</p>}
+                      {errors.company && <p className="text-label text-red-500 mt-1">{errors.company}</p>}
                     </div>
                   </div>
 
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div>
-                      <label className="block text-xs font-medium text-brand-navy mb-1">
+                      <label className="block text-label font-medium text-brand-navy mb-1">
                         Your Role
                       </label>
                       <select
                         value={formData.role}
                         onChange={(e) => setFormData({ ...formData, role: e.target.value })}
-                        className="w-full px-3 py-2 text-sm rounded-lg border border-brand-border bg-brand-offwhite/50 text-brand-navy focus:bg-white focus:outline-none focus:ring-2 focus:ring-brand-teal"
+                        className="w-full px-3 py-2 text-body rounded-lg border border-brand-border bg-brand-offwhite/50 text-brand-navy focus:bg-white focus:outline-none focus:ring-2 focus:ring-brand-teal"
                       >
                         <option value="Audit Partner / Manager">Audit Partner / Manager</option>
                         <option value="Senior Auditor / Senior Accountant">Senior Auditor / Accountant</option>
@@ -245,13 +245,13 @@ export const DemoModal: React.FC<DemoModalProps> = ({
                     </div>
 
                     <div>
-                      <label className="block text-xs font-medium text-brand-navy mb-1">
+                      <label className="block text-label font-medium text-brand-navy mb-1">
                         Primary Interest
                       </label>
                       <select
                         value={formData.product}
                         onChange={(e) => setFormData({ ...formData, product: e.target.value })}
-                        className="w-full px-3 py-2 text-sm rounded-lg border border-brand-border bg-brand-offwhite/50 text-brand-navy focus:bg-white focus:outline-none focus:ring-2 focus:ring-brand-teal"
+                        className="w-full px-3 py-2 text-body rounded-lg border border-brand-border bg-brand-offwhite/50 text-brand-navy focus:bg-white focus:outline-none focus:ring-2 focus:ring-brand-teal"
                       >
                         <option value="Financial Audit Automation">End-to-End: Financial Audit</option>
                         <option value="Escrow Account Audit">End-to-End: Escrow Audit</option>
@@ -264,7 +264,7 @@ export const DemoModal: React.FC<DemoModalProps> = ({
                   </div>
 
                   <div>
-                    <label className="block text-xs font-medium text-brand-navy mb-1">
+                    <label className="block text-label font-medium text-brand-navy mb-1">
                       Notes or Specific Requirements (Optional)
                     </label>
                     <textarea
@@ -272,7 +272,7 @@ export const DemoModal: React.FC<DemoModalProps> = ({
                       value={formData.notes}
                       onChange={(e) => setFormData({ ...formData, notes: e.target.value })}
                       placeholder="Tell us about your document volume or current workflow..."
-                      className="w-full px-3 py-2 text-sm rounded-lg border border-brand-border bg-brand-offwhite/50 text-brand-navy placeholder:text-brand-navymuted/60 focus:bg-white focus:outline-none focus:ring-2 focus:ring-brand-teal transition-all resize-none"
+                      className="w-full px-3 py-2 text-body rounded-lg border border-brand-border bg-brand-offwhite/50 text-brand-navy placeholder:text-brand-navymuted/60 focus:bg-white focus:outline-none focus:ring-2 focus:ring-brand-teal transition-all resize-none"
                     />
                   </div>
 
@@ -280,8 +280,9 @@ export const DemoModal: React.FC<DemoModalProps> = ({
                     <Button
                       type="submit"
                       variant="teal"
+                      size="md"
                       isLoading={isSubmitting}
-                      className="w-full text-sm py-2.5 font-medium"
+                      className="w-full py-2.5"
                     >
                       Request Guided Demo
                     </Button>

@@ -89,21 +89,21 @@ export default function SolutionsPage() {
 
       <main className="flex-1 pt-28 pb-20 md:pt-36 md:pb-28">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-          {/* Breadcrumb */}
-          <div className="flex items-center gap-2 text-xs text-brand-navymuted mb-6">
+          {/* Breadcrumb: Labels 12px / 11px */}
+          <div className="flex items-center gap-2 text-label text-brand-navymuted mb-6">
             <Link href="/" className="hover:text-brand-navy transition-colors">
               Home
             </Link>
             <ChevronRight className="w-3.5 h-3.5" />
-            <span className="text-brand-navy font-medium">End-to-End Solutions</span>
+            <span className="text-brand-navy font-semibold">End-to-End Solutions</span>
           </div>
 
-          {/* Heading */}
+          {/* Heading: H1 52px desktop / 36px mobile, weight 600, line-height 1.1, letter-spacing -0.035em */}
           <div className="max-w-3xl mb-10">
-            <h1 className="text-4xl sm:text-5xl font-bold tracking-tight text-brand-navy leading-[1.12]">
+            <h1 className="text-h1 text-brand-navy">
               End-to-End Solutions
             </h1>
-            <p className="mt-3 text-base sm:text-lg text-brand-navymuted leading-relaxed">
+            <p className="mt-3 md:mt-4 text-body-lg text-brand-navymuted leading-relaxed max-w-2xl">
               Complete software that runs an entire financial workflow from start to finish.
             </p>
           </div>
@@ -115,27 +115,28 @@ export default function SolutionsPage() {
                 <div className="bg-white rounded-xl p-5 sm:p-7 border border-brand-border">
                   <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
                     <div className="lg:col-span-6 space-y-3">
-                      <div className="text-xs font-semibold uppercase tracking-wider text-brand-teal">
+                      <div className="text-label font-medium text-brand-teal">
                         {sol.category}
                       </div>
 
-                      <h2 className="text-xl font-bold text-brand-navy">
+                      {/* H2/H3 Heading */}
+                      <h2 className="text-h3 text-brand-navy">
                         {sol.title}
                       </h2>
 
-                      <p className="text-xs sm:text-sm text-brand-navymuted leading-relaxed">
+                      <p className="text-body text-brand-navymuted leading-relaxed">
                         {sol.desc}
                       </p>
 
                       <div className="space-y-1 pt-1">
                         {sol.features.map((item, dIdx) => (
-                          <div key={dIdx} className="text-xs text-brand-navy/90 leading-relaxed">
+                          <div key={dIdx} className="text-body-sm text-brand-navy/90 leading-relaxed">
                             • {item}
                           </div>
                         ))}
                       </div>
 
-                      <div className="pt-3 border-t border-brand-border flex items-center justify-between text-xs">
+                      <div className="pt-3 border-t border-brand-border flex items-center justify-between text-label">
                         <span className="text-brand-navymuted">{sol.target}</span>
                         <Button
                           variant="teal"

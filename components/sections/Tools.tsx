@@ -70,7 +70,7 @@ export const Tools: React.FC<ToolsProps> = ({ onRequestDemo }) => {
         <div className="mb-10">
           <CurtainReveal initialScale={1.08} initialY={35}>
             <div className="relative rounded-xl overflow-hidden bg-white border border-brand-border shadow-xs">
-              <div className="px-4 py-2 bg-brand-offwhite border-b border-brand-border flex items-center justify-between text-xs text-brand-navymuted">
+              <div className="px-4 py-2 bg-brand-offwhite border-b border-brand-border flex items-center justify-between text-label text-brand-navymuted">
                 <span className="font-semibold text-brand-navy">Document Processing Pipeline</span>
                 <span>Product Visual</span>
               </div>
@@ -88,7 +88,7 @@ export const Tools: React.FC<ToolsProps> = ({ onRequestDemo }) => {
           </CurtainReveal>
         </div>
 
-        {/* Clean Tools Grid - No pills, concise text */}
+        {/* Clean Tools Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
           {tools.map((tool, idx) => (
             <ScrollReveal key={tool.id} delay={idx * 0.04}>
@@ -97,23 +97,24 @@ export const Tools: React.FC<ToolsProps> = ({ onRequestDemo }) => {
                 className="h-full rounded-lg p-5 bg-white border border-brand-border flex flex-col justify-between space-y-3 cursor-pointer hover:border-brand-teal/50 transition-colors"
               >
                 <div className="space-y-1.5">
-                  <div className="flex items-center justify-between text-[11px] text-brand-navymuted">
+                  <div className="flex items-center justify-between text-label text-brand-navymuted">
                     <span>Tool 0{idx + 1}</span>
                     <span className="font-mono">{tool.status}</span>
                   </div>
 
-                  <h3 className="text-base font-bold text-brand-navy">
+                  {/* Card heading: H4 21px desktop / 19px mobile, weight 600, line-height 1.3 */}
+                  <h4 className="text-h4 text-brand-navy">
                     {tool.title}
-                  </h3>
+                  </h4>
 
-                  <p className="text-xs text-brand-navymuted leading-relaxed">
+                  <p className="text-body-sm text-brand-navymuted leading-relaxed">
                     {tool.description}
                   </p>
                 </div>
 
-                <div className="pt-2 border-t border-brand-border text-[11px] text-brand-navymuted flex items-center justify-between">
+                <div className="pt-2.5 border-t border-brand-border text-label text-brand-navymuted flex items-center justify-between">
                   <span>Input: {tool.inputs}</span>
-                  <span className="text-brand-green font-medium text-[11px]">Inquire &rarr;</span>
+                  <span className="text-brand-green font-medium text-btn">Inquire &rarr;</span>
                 </div>
               </div>
             </ScrollReveal>

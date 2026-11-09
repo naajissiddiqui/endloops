@@ -129,13 +129,13 @@ export const Capabilities: React.FC = () => {
           />
         </ScrollReveal>
 
-        {/* Tab buttons */}
+        {/* Tab buttons: Buttons 15px, weight 500 */}
         <div className="flex flex-wrap items-center justify-center gap-1.5 mb-8">
           {capabilities.map((cap, idx) => (
             <button
               key={cap.id}
               onClick={() => setActiveTab(idx)}
-              className={`flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium rounded-lg transition-colors ${
+              className={`flex items-center gap-1.5 px-3.5 py-1.5 text-btn font-medium rounded-lg transition-colors ${
                 activeTab === idx
                   ? 'bg-brand-navy text-white'
                   : 'bg-white text-brand-navy/70 border border-brand-border hover:text-brand-navy'
@@ -156,15 +156,15 @@ export const Capabilities: React.FC = () => {
         >
           {/* Left Details */}
           <div className="md:col-span-6 space-y-3">
-            <h3 className="text-lg font-bold text-brand-navy">
+            <h3 className="text-h3 text-brand-navy">
               {current.title}
             </h3>
 
-            <p className="text-xs sm:text-sm text-brand-navymuted leading-relaxed">
+            <p className="text-body text-brand-navymuted leading-relaxed">
               {current.summary}
             </p>
 
-            <ul className="space-y-1.5 pt-1 text-xs text-brand-navy/80">
+            <ul className="space-y-1.5 pt-1 text-body-sm text-brand-navy/90">
               {current.details.map((detail, dIdx) => (
                 <li key={dIdx} className="leading-relaxed">
                   • {detail}
@@ -174,13 +174,13 @@ export const Capabilities: React.FC = () => {
           </div>
 
           {/* Right Preview Card - Clean minimal table */}
-          <div className="md:col-span-6 bg-brand-offwhite p-4 rounded-lg border border-brand-border space-y-2.5 text-xs">
+          <div className="md:col-span-6 bg-brand-offwhite p-4 rounded-lg border border-brand-border space-y-2.5">
             <div className="flex items-center justify-between pb-2 border-b border-brand-border">
-              <span className="font-semibold text-brand-navy">{current.preview.title}</span>
-              <span className="text-[11px] text-brand-navymuted font-mono">Illustrative</span>
+              <span className="text-body-sm font-semibold text-brand-navy">{current.preview.title}</span>
+              <span className="text-label text-brand-navymuted font-mono">Illustrative</span>
             </div>
 
-            <div className="bg-white rounded border border-brand-border divide-y divide-brand-border text-[11px]">
+            <div className="bg-white rounded border border-brand-border divide-y divide-brand-border text-body-sm">
               {current.preview.fields.map((field, fIdx) => (
                 <div key={fIdx} className="px-3 py-1.5 flex items-center justify-between">
                   <span className="text-brand-navymuted">{field.label}</span>
@@ -189,7 +189,7 @@ export const Capabilities: React.FC = () => {
               ))}
             </div>
 
-            <div className="text-[10px] text-brand-navymuted">
+            <div className="text-label text-brand-navymuted">
               Sample data shown for demonstration purposes.
             </div>
           </div>

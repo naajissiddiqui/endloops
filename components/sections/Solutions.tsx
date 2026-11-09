@@ -84,7 +84,7 @@ export const Solutions: React.FC<SolutionsProps> = ({ onRequestDemo }) => {
         <div className="mb-10">
           <CurtainReveal initialScale={1.08} initialY={35}>
             <div className="relative rounded-xl overflow-hidden bg-brand-offwhite border border-brand-border shadow-xs">
-              <div className="px-4 py-2 bg-brand-offwhite border-b border-brand-border flex items-center justify-between text-xs text-brand-navymuted">
+              <div className="px-4 py-2 bg-brand-offwhite border-b border-brand-border flex items-center justify-between text-label text-brand-navymuted">
                 <span className="font-semibold text-brand-navy">Financial Audit Suite</span>
                 <span>Workflow Overview</span>
               </div>
@@ -112,10 +112,10 @@ export const Solutions: React.FC<SolutionsProps> = ({ onRequestDemo }) => {
                 <button
                   key={item.id}
                   onClick={() => setSelectedSolution(index)}
-                  className={`w-full text-left p-3 rounded-lg transition-colors border flex items-center justify-between text-xs sm:text-sm ${
+                  className={`w-full text-left p-3 rounded-lg transition-colors border flex items-center justify-between text-btn ${
                     isActive
                       ? 'bg-brand-navy text-white border-brand-navy font-semibold'
-                      : 'bg-brand-offwhite text-brand-navy border-brand-border hover:bg-white'
+                      : 'bg-brand-offwhite text-brand-navy border-brand-border hover:bg-white font-medium'
                   }`}
                 >
                   <span className="truncate mr-2">{item.title}</span>
@@ -131,15 +131,15 @@ export const Solutions: React.FC<SolutionsProps> = ({ onRequestDemo }) => {
 
           {/* Solution Details View */}
           <div className="md:col-span-7 bg-brand-offwhite rounded-xl p-5 sm:p-6 border border-brand-border space-y-4">
-            <h3 className="text-lg font-bold text-brand-navy">
+            <h3 className="text-h3 text-brand-navy">
               {current.title}
             </h3>
 
-            <p className="text-xs sm:text-sm text-brand-navymuted leading-relaxed">
+            <p className="text-body text-brand-navymuted leading-relaxed">
               {current.description}
             </p>
 
-            <ul className="space-y-1.5 text-xs text-brand-navy/90">
+            <ul className="space-y-1.5 text-body-sm text-brand-navy/90">
               {current.features.map((feature, fIdx) => (
                 <li key={fIdx}>
                   • {feature}
@@ -147,15 +147,15 @@ export const Solutions: React.FC<SolutionsProps> = ({ onRequestDemo }) => {
               ))}
             </ul>
 
-            <div className="pt-3 border-t border-brand-border flex flex-col sm:flex-row sm:items-center justify-between gap-3 text-xs">
+            <div className="pt-3 border-t border-brand-border flex flex-col sm:flex-row sm:items-center justify-between gap-3 text-label">
               <span className="text-brand-navymuted truncate">
-                <strong className="text-brand-navy">For:</strong> {current.forWho}
+                <strong className="text-brand-navy font-semibold">For:</strong> {current.forWho}
               </span>
               <Button
                 variant="teal"
                 size="sm"
                 onClick={() => onRequestDemo(current.title)}
-                className="text-xs whitespace-nowrap self-start sm:self-auto px-4 py-1.5"
+                className="whitespace-nowrap self-start sm:self-auto px-4 py-1.5"
               >
                 Inquire
               </Button>

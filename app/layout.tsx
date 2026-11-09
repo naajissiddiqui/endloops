@@ -4,7 +4,7 @@ import './globals.css';
 
 const manrope = Manrope({
   subsets: ['latin'],
-  weight: ['400', '500', '600', '700', '800'],
+  weight: ['400', '500', '600', '700'],
   variable: '--font-manrope',
   display: 'swap',
 });
@@ -12,13 +12,12 @@ const manrope = Manrope({
 export const metadata: Metadata = {
   title: 'Endloops — Financial Automation for Financial Professionals',
   description:
-    'Born from Dubai audit firm Alkazim. Endloops automates financial workflows, document extraction, vouching, and working-paper preparation while keeping final sign-off with people.',
+    'Endloops automates financial workflows, document extraction, vouching, and working-paper preparation while keeping final sign-off with people.',
   keywords: [
     'Endloops',
     'financial automation',
     'audit software',
     'escrow audit Dubai',
-    'Alkazim',
     'vouching automation',
     'purchase order extraction',
     'accounting automation GCC',
@@ -44,4 +43,3 @@ export default function RootLayout({
     </html>
   );
 }
-

@@ -27,7 +27,85 @@ const config: Config = {
         },
       },
       fontFamily: {
-        sans: ['var(--font-manrope)', 'sans-serif'],
+        sans: ['var(--font-manrope)', '-apple-system', 'BlinkMacSystemFont', 'sans-serif'],
+      },
+      fontSize: {
+        // Desktop / Mobile typography scale
+        'display': [
+          'clamp(2.5rem, 1.84rem + 2.7vw, 4rem)', // 40px -> 64px
+          {
+            lineHeight: '1.08',
+            letterSpacing: '-0.04em',
+            fontWeight: '600',
+          },
+        ],
+        'h1': [
+          'clamp(2.25rem, 1.81rem + 1.8vw, 3.25rem)', // 36px -> 52px
+          {
+            lineHeight: '1.1',
+            letterSpacing: '-0.035em',
+            fontWeight: '600',
+          },
+        ],
+        'h2': [
+          'clamp(1.875rem, 1.55rem + 1.35vw, 2.625rem)', // 30px -> 42px
+          {
+            lineHeight: '1.15',
+            letterSpacing: '-0.03em',
+            fontWeight: '600',
+          },
+        ],
+        'h3': [
+          'clamp(1.5rem, 1.39rem + 0.45vw, 1.75rem)', // 24px -> 28px
+          {
+            lineHeight: '1.25',
+            letterSpacing: '-0.02em',
+            fontWeight: '600',
+          },
+        ],
+        'h4': [
+          'clamp(1.1875rem, 1.13rem + 0.23vw, 1.3125rem)', // 19px -> 21px
+          {
+            lineHeight: '1.3',
+            letterSpacing: '-0.015em',
+            fontWeight: '600',
+          },
+        ],
+        'body-lg': [
+          'clamp(1rem, 0.945rem + 0.23vw, 1.125rem)', // 16px -> 18px
+          {
+            lineHeight: '1.65',
+            fontWeight: '400',
+          },
+        ],
+        'body': [
+          'clamp(0.9375rem, 0.91rem + 0.11vw, 1rem)', // 15px -> 16px
+          {
+            lineHeight: '1.6',
+            fontWeight: '400',
+          },
+        ],
+        'body-sm': [
+          'clamp(0.8125rem, 0.785rem + 0.11vw, 0.875rem)', // 13px -> 14px
+          {
+            lineHeight: '1.5',
+            fontWeight: '400',
+          },
+        ],
+        'label': [
+          'clamp(0.6875rem, 0.66rem + 0.11vw, 0.75rem)', // 11px -> 12px
+          {
+            lineHeight: '1.4',
+            fontWeight: '500',
+          },
+        ],
+        'btn': [
+          '15px',
+          {
+            lineHeight: '1.4',
+            fontWeight: '500',
+          },
+        ],
       },
       boxShadow: {
         'soft-sm': '0 2px 8px -2px rgba(20, 43, 69, 0.05)',
@@ -50,4 +128,3 @@ const config: Config = {
 };
 
 export default config;
-

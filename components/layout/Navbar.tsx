@@ -1,7 +1,6 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
-import Link from 'next/link';
 import { Menu, X } from 'lucide-react';
 import Logo from '@/components/ui/Logo';
 import Button from '@/components/ui/Button';
@@ -36,8 +35,8 @@ export const Navbar: React.FC<NavbarProps> = ({ onRequestDemo }) => {
       <header
         className={`fixed top-0 left-0 right-0 z-40 transition-all duration-200 ${
           isScrolled
-            ? 'bg-white/95 backdrop-blur-sm border-b border-brand-border py-4 shadow-sm'
-            : 'bg-transparent py-5'
+            ? 'bg-white/95 backdrop-blur-sm border-b border-brand-border py-3.5 shadow-sm'
+            : 'bg-transparent py-4 sm:py-5'
         }`}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -47,26 +46,26 @@ export const Navbar: React.FC<NavbarProps> = ({ onRequestDemo }) => {
               <Logo height={32} width={124} />
             </div>
 
-            {/* Desktop Navigation - Clean typography without pill containers */}
+            {/* Desktop Navigation - 15px weight 500 */}
             <nav className="hidden lg:flex items-center space-x-7">
               {navLinks.map((link) => (
                 <a
                   key={link.name}
                   href={link.href}
-                  className="text-sm font-medium text-brand-navy/70 hover:text-brand-navy transition-colors"
+                  className="text-btn font-medium text-brand-navy/70 hover:text-brand-navy transition-colors"
                 >
                   {link.name}
                 </a>
               ))}
             </nav>
 
-            {/* Desktop Right CTA */}
+            {/* Desktop Right CTA - 15px weight 500 */}
             <div className="hidden lg:flex items-center space-x-4">
               <Button
                 variant="teal"
-                size="sm"
+                size="md"
                 onClick={onRequestDemo}
-                className="text-sm px-4 py-2 font-medium"
+                className="px-4 py-2"
               >
                 Request a Demo
               </Button>
@@ -78,7 +77,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onRequestDemo }) => {
                 variant="teal"
                 size="sm"
                 onClick={onRequestDemo}
-                className="text-xs px-3 py-1.5"
+                className="px-3 py-1.5"
               >
                 Demo
               </Button>
@@ -124,7 +123,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onRequestDemo }) => {
                     key={link.name}
                     href={link.href}
                     onClick={() => setIsMobileMenuOpen(false)}
-                    className="block px-3 py-2.5 text-base font-medium text-brand-navy hover:text-brand-green rounded-lg transition-colors"
+                    className="block px-3 py-2.5 text-body font-medium text-brand-navy hover:text-brand-green rounded-lg transition-colors"
                   >
                     {link.name}
                   </a>
@@ -135,7 +134,8 @@ export const Navbar: React.FC<NavbarProps> = ({ onRequestDemo }) => {
             <div className="pt-6 border-t border-brand-border">
               <Button
                 variant="teal"
-                className="w-full py-2.5 text-sm"
+                size="md"
+                className="w-full py-2.5"
                 onClick={() => {
                   setIsMobileMenuOpen(false);
                   onRequestDemo();
