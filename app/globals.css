@@ -1,0 +1,72 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --color-white: #FFFFFF;
+    --color-offwhite: #F6FAF9;
+    --color-green: #079B78;
+    --color-teal: #20B99A;
+    --color-navy: #142B45;
+    --color-blue: #3679CE;
+    --color-purple: #8067D9;
+    --color-mint: #E5F6F0;
+    --color-lavender: #F0EEFF;
+    --color-border: #E8EFED;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-family: var(--font-manrope), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    color: #142B45;
+    background-color: #F6FAF9;
+  }
+
+  body {
+    overflow-x: hidden;
+    background-color: #F6FAF9;
+  }
+
+  ::selection {
+    background-color: #20B99A;
+    color: #FFFFFF;
+  }
+}
+
+/* Accessibility: respect reduced motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #F6FAF9;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #D4E3E0;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #20B99A;
+}
+
