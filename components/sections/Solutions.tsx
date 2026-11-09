@@ -79,7 +79,6 @@ export const Solutions: React.FC<SolutionsProps> = ({ onRequestDemo }) => {
           />
         </ScrollReveal>
 
-        {/* Curtain-Style Image Reveal Visual */}
         <div className="mb-10">
           <CurtainReveal initialScale={1.08} initialY={35}>
             <div className="relative rounded-xl overflow-hidden bg-brand-offwhite border border-brand-border shadow-xs">
@@ -95,9 +94,7 @@ export const Solutions: React.FC<SolutionsProps> = ({ onRequestDemo }) => {
           </CurtainReveal>
         </div>
 
-        {/* Clean Solutions Explorer */}
         <div className="grid grid-cols-1 md:grid-cols-12 gap-6 items-start">
-          {/* Solution Selector List */}
           <div className="md:col-span-5 space-y-1.5">
             {solutions.map((item, index) => {
               const isActive = selectedSolution === index;
@@ -122,7 +119,6 @@ export const Solutions: React.FC<SolutionsProps> = ({ onRequestDemo }) => {
             })}
           </div>
 
-          {/* Solution Details View */}
           <div className="md:col-span-7 bg-brand-offwhite rounded-xl p-5 sm:p-6 border border-brand-border space-y-4">
             <h3 className="text-h3 text-brand-navy">
               {current.title}

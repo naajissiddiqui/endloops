@@ -69,7 +69,6 @@ export const Workflow: React.FC = () => {
           />
         </ScrollReveal>
 
-        {/* Curtain-Style Image Reveal Visual */}
         <div className="mb-10">
           <CurtainReveal initialScale={1.08} initialY={35}>
             <div className="relative rounded-xl overflow-hidden bg-brand-offwhite border border-brand-border shadow-xs">
@@ -85,7 +84,6 @@ export const Workflow: React.FC = () => {
           </CurtainReveal>
         </div>
 
-        {/* Interactive React Bits Stepper */}
         <div className="mb-12 max-w-3xl mx-auto">
           <Stepper
             theme="light"
@@ -133,7 +131,6 @@ export const Workflow: React.FC = () => {
           </Stepper>
         </div>
 
-        {/* Live Pipeline Transitions using React Bits AnimatedList */}
         <div className="mb-12 max-w-2xl mx-auto">
           <div className="text-center mb-4">
             <span className="text-label font-mono text-brand-teal uppercase tracking-wider">Pipeline Activity</span>
@@ -148,7 +145,6 @@ export const Workflow: React.FC = () => {
           />
         </div>
 
-        {/* 4 Steps - H4 Card headings: 21px desktop / 19px mobile */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 pt-4 border-t border-brand-border">
           {steps.map((st, idx) => (
             <ScrollReveal key={st.num} delay={idx * 0.05}>

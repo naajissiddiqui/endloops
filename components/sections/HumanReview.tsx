@@ -16,9 +16,7 @@ export const HumanReview: React.FC = () => {
           />
         </ScrollReveal>
 
-        {/* Simplified Two-Pillar Architecture */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-stretch mt-8 sm:mt-10">
-          {/* Pillar 1: Automated Preparation */}
           <ScrollReveal direction="left" delay={0.05}>
             <div className="h-full rounded-2xl bg-white p-6 sm:p-8 border border-brand-border space-y-5">
               <div className="flex items-center gap-3">
@@ -63,7 +61,6 @@ export const HumanReview: React.FC = () => {
             </div>
           </ScrollReveal>
 
-          {/* Pillar 2: Human Sign-Off */}
           <ScrollReveal direction="right" delay={0.1}>
             <div className="h-full rounded-2xl bg-brand-navy p-6 sm:p-8 text-white space-y-5 flex flex-col justify-between">
               <div className="space-y-5">

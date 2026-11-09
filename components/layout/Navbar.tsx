@@ -45,7 +45,6 @@ export const Navbar: React.FC<NavbarProps> = ({ onRequestDemo }) => {
   return (
     <header className="fixed top-3 sm:top-5 left-0 right-0 z-50 pointer-events-none px-4 sm:px-6 lg:px-8 overflow-x-clip">
       <div className="max-w-7xl mx-auto flex items-center justify-between gap-3">
-        {/* 1. Left: Logo blending with background - NO PILL */}
         <div className="pointer-events-auto flex items-center flex-1 justify-start">
           <a
             href="/"
@@ -60,7 +59,6 @@ export const Navbar: React.FC<NavbarProps> = ({ onRequestDemo }) => {
           </a>
         </div>
 
-        {/* 2. Center: Centered PillNav (Desktop md+) */}
         <div className="pointer-events-auto hidden md:flex items-center justify-center flex-none">
           <PillNav
             items={navItems}
@@ -79,9 +77,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onRequestDemo }) => {
           />
         </div>
 
-        {/* 3. Right: SpecularButton Request a Demo + Mobile Nav Toggle */}
         <div className="pointer-events-auto flex items-center flex-1 justify-end gap-2 sm:gap-3">
-          {/* Mobile hamburger navigation pill */}
           <div className="md:hidden">
             <PillNav
               items={navItems}
@@ -100,7 +96,6 @@ export const Navbar: React.FC<NavbarProps> = ({ onRequestDemo }) => {
             />
           </div>
 
-          {/* Desktop SpecularButton */}
           <div className="hidden sm:inline-block">
             <SpecularButton
               size="md"
@@ -125,7 +120,6 @@ export const Navbar: React.FC<NavbarProps> = ({ onRequestDemo }) => {
             </SpecularButton>
           </div>
 
-          {/* Mobile SpecularButton */}
           <div className="inline-block sm:hidden">
             <SpecularButton
               size="sm"

@@ -130,7 +130,6 @@ export const Capabilities: React.FC = () => {
           />
         </ScrollReveal>
 
-        {/* Tab buttons: Buttons 15px, weight 500 */}
         <div className="flex flex-wrap items-center justify-center gap-1.5 mb-8">
           {capabilities.map((cap, idx) => (
             <button
@@ -147,7 +146,6 @@ export const Capabilities: React.FC = () => {
           ))}
         </div>
 
-        {/* Content Box */}
         <motion.div
           key={current.id}
           initial={{ opacity: 0, y: 8 }}
@@ -155,7 +153,6 @@ export const Capabilities: React.FC = () => {
           transition={{ duration: 0.2 }}
           className="grid grid-cols-1 md:grid-cols-12 gap-6 items-start bg-white rounded-xl p-5 sm:p-7 border border-brand-border"
         >
-          {/* Left Details */}
           <div className="md:col-span-6 space-y-3">
             <h3 className="text-h3 text-brand-navy">
               {current.title}
@@ -174,7 +171,6 @@ export const Capabilities: React.FC = () => {
             </ul>
           </div>
 
-          {/* Right Preview Card - SpotlightCard with clean minimal table */}
           <SpotlightCard
             theme="light"
             spotlightColor="rgba(32, 185, 154, 0.16)"

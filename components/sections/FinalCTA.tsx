@@ -25,7 +25,6 @@ export const FinalCTA: React.FC<FinalCTAProps> = ({ onRequestDemo }) => {
 
   return (
     <section className="relative py-16 md:py-20 bg-brand-navy text-white overflow-hidden">
-      {/* Subtle Aurora Ambient Background */}
       <div className="absolute inset-0 pointer-events-none opacity-20">
         <Aurora
           colorStops={['#079B78', '#20B99A', '#3679CE']}
@@ -37,12 +36,10 @@ export const FinalCTA: React.FC<FinalCTAProps> = ({ onRequestDemo }) => {
       </div>
 
       <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-4">
-        {/* H2 Heading: 42px desktop / 30px mobile, weight 600, line-height 1.15, letter-spacing -0.03em */}
         <h2 className="text-h2 text-white">
           Ready to eliminate repetitive financial work?
         </h2>
 
-        {/* Large Body: 18px desktop / 16px mobile, weight 400, line-height 1.65 */}
         <p className="text-body-lg text-slate-300 max-w-xl mx-auto leading-relaxed">
           The software prepares the work. You decide. Request a demonstration to see how Endloops streamlines your workflow.
         </p>

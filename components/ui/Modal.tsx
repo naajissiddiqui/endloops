@@ -150,7 +150,6 @@ export const DemoModal: React.FC<DemoModalProps> = ({
             ) : (
               <div>
                 <div className="mb-6">
-                  {/* H3 Heading: 28px desktop / 24px mobile, weight 600 */}
                   <h3 id="modal-title" className="text-h3 text-brand-navy">
                     Request an Endloops Demo
                   </h3>

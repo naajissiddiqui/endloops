@@ -66,7 +66,6 @@ export const Tools: React.FC<ToolsProps> = ({ onRequestDemo }) => {
           />
         </ScrollReveal>
 
-        {/* Curtain-Style Image Reveal Visual */}
         <div className="mb-10">
           <CurtainReveal initialScale={1.08} initialY={35}>
             <div className="relative rounded-xl overflow-hidden bg-white border border-brand-border shadow-xs">
@@ -82,7 +81,6 @@ export const Tools: React.FC<ToolsProps> = ({ onRequestDemo }) => {
           </CurtainReveal>
         </div>
 
-        {/* Clean Tools Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
           {tools.map((tool, idx) => (
             <ScrollReveal key={tool.id} delay={idx * 0.04}>
@@ -100,7 +98,6 @@ export const Tools: React.FC<ToolsProps> = ({ onRequestDemo }) => {
                     <span className="font-mono">{tool.status}</span>
                   </div>
 
-                  {/* Card heading: H4 21px desktop / 19px mobile, weight 600, line-height 1.3 */}
                   <h4 className="text-h4 text-brand-navy">
                     {tool.title}
                   </h4>
