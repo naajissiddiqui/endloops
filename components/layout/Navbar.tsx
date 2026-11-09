@@ -8,7 +8,7 @@ interface NavbarProps {
   onRequestDemo: () => void;
 }
 
-export const Navbar: React.FC<NavbarProps> = ({ onRequestDemo }) => {
+export const Navbar: React.FC<NavbarProps> = React.memo(({ onRequestDemo }) => {
   const navItems: PillNavItem[] = [
     { label: 'Capabilities', href: '#capabilities' },
     { label: 'Solutions', href: '#solutions' },
@@ -147,6 +147,8 @@ export const Navbar: React.FC<NavbarProps> = ({ onRequestDemo }) => {
       </div>
     </header>
   );
-};
+});
+
+Navbar.displayName = 'Navbar';
 
 export default Navbar;

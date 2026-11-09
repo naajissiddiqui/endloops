@@ -140,7 +140,7 @@ export const Workflow: React.FC = () => {
             theme="light"
             items={pipelineTransitions}
             width="100%"
-            maxHeight={280}
+            maxHeight={320}
             className="shadow-xs border border-brand-border rounded-xl bg-white"
           />
         </div>

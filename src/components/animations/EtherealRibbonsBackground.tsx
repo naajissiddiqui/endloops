@@ -7,7 +7,7 @@ interface EtherealRibbonsBackgroundProps {
   className?: string;
 }
 
-export const EtherealRibbonsBackground: React.FC<EtherealRibbonsBackgroundProps> = ({
+export const EtherealRibbonsBackground: React.FC<EtherealRibbonsBackgroundProps> = React.memo(({
   imageSrc = '/images/ethereal-aqua-wave-ribbons.png',
   className = ''
 }) => {
@@ -133,7 +133,9 @@ export const EtherealRibbonsBackground: React.FC<EtherealRibbonsBackgroundProps>
       <div className="absolute bottom-0 left-0 right-0 h-36 bg-gradient-to-t from-brand-offwhite via-brand-offwhite/60 to-transparent" />
     </div>
   );
-};
+});
+
+EtherealRibbonsBackground.displayName = 'EtherealRibbonsBackground';
 
 export default EtherealRibbonsBackground;
 

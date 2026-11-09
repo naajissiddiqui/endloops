@@ -30,16 +30,16 @@ export const App: React.FC = () => {
     return () => window.removeEventListener('popstate', handlePopState);
   }, []);
 
-  const handleOpenDemoModal = (productName?: string) => {
-    if (productName) {
+  const handleOpenDemoModal = React.useCallback((productName?: string) => {
+    if (productName && typeof productName === 'string') {
       setSelectedProductForDemo(productName);
     }
     setIsDemoModalOpen(true);
-  };
+  }, []);
 
-  const handleCloseDemoModal = () => {
+  const handleCloseDemoModal = React.useCallback(() => {
     setIsDemoModalOpen(false);
-  };
+  }, []);
 
   if (currentPath === '/solutions') {
     return <SolutionsPage />;
@@ -56,11 +56,11 @@ export const App: React.FC = () => {
   return (
     <div className="flex flex-col min-h-screen bg-brand-offwhite">
       {/* 1. Navigation */}
-      <Navbar onRequestDemo={() => handleOpenDemoModal()} />
+      <Navbar onRequestDemo={handleOpenDemoModal} />
 
       <main className="flex-1">
         {/* 2. Hero with Rebuilt Realistic Dashboard Visual */}
-        <Hero onRequestDemo={() => handleOpenDemoModal()} />
+        <Hero onRequestDemo={handleOpenDemoModal} />
 
         {/* 3. Value Proposition / The Endloops Principle */}
         <ValueProp />
@@ -81,7 +81,7 @@ export const App: React.FC = () => {
         <HumanReview />
 
         {/* 9. About Endloops */}
-        <About onRequestDemo={() => handleOpenDemoModal()} />
+        <About onRequestDemo={handleOpenDemoModal} />
 
         {/* 10. Final Call to Action */}
         <FinalCTA onRequestDemo={handleOpenDemoModal} />

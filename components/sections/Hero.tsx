@@ -10,7 +10,7 @@ interface HeroProps {
   onRequestDemo: () => void;
 }
 
-export const Hero: React.FC<HeroProps> = ({ onRequestDemo }) => {
+export const Hero: React.FC<HeroProps> = React.memo(({ onRequestDemo }) => {
   return (
     <section className="relative min-h-[90vh] lg:min-h-screen w-full flex flex-col justify-center items-center pt-28 pb-16 sm:pt-36 sm:pb-24 overflow-hidden bg-brand-offwhite">
       <EtherealRibbonsBackground />
@@ -87,6 +87,8 @@ export const Hero: React.FC<HeroProps> = ({ onRequestDemo }) => {
       />
     </section>
   );
-};
+});
+
+Hero.displayName = 'Hero';
 
 export default Hero;

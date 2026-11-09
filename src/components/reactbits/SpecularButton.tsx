@@ -477,7 +477,7 @@ const SpecularButton = ({
 
   useEffect(() => {
     wakeRef.current?.();
-  });
+  }, [disabled, size, radius, tint, tintOpacity, baseColor, intensity, idleIntensity]);
 
   return (
     <button

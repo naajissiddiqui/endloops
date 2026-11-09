@@ -131,7 +131,7 @@ const FRAMED_CLASS =
 const FRAME_RIM_CLASS =
   'pointer-events-none absolute inset-0 z-[3] rounded-[inherit] [box-shadow:inset_0_0_0_1px_var(--al-frame-edge),inset_0_1px_0_var(--al-frame-highlight)]';
 const VIEWPORT_CLASS =
-  'relative box-border overflow-x-hidden overflow-y-auto overscroll-contain rounded-[calc(var(--al-radius)+6px)] p-[6px] outline-none [--al-fade-bottom:0px] [--al-fade-top:0px]';
+  'relative box-border overflow-x-hidden overflow-y-auto overscroll-auto rounded-[calc(var(--al-radius)+6px)] p-[6px] outline-none [--al-fade-bottom:0px] [--al-fade-top:0px]';
 const SCROLLBAR_CLASS =
   '[scrollbar-width:thin] [scrollbar-color:var(--al-thumb)_transparent] [&::-webkit-scrollbar]:w-[6px] [&::-webkit-scrollbar-track]:bg-transparent [&::-webkit-scrollbar-thumb]:rounded-[3px] [&::-webkit-scrollbar-thumb]:bg-[color:var(--al-thumb)]';
 const BARE_CLASS = '[scrollbar-width:none] [&::-webkit-scrollbar]:hidden';

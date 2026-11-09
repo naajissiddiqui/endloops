@@ -104,8 +104,9 @@ export const DemoModal: React.FC<DemoModalProps> = ({
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
+            transition={{ duration: 0.2, ease: 'easeOut' }}
             onClick={onClose}
-            className="fixed inset-0 bg-brand-navy/50 backdrop-blur-xs transition-opacity"
+            className="fixed inset-0 bg-brand-navy/45 backdrop-blur-sm will-change-[opacity]"
             aria-hidden="true"
           />
 
