@@ -2,8 +2,8 @@
 
 import React from 'react';
 import SectionHeading from '@/components/ui/SectionHeading';
-import Button from '@/components/ui/Button';
 import ScrollReveal from '@/components/animations/ScrollReveal';
+import SpecularButton from '@/src/components/reactbits/SpecularButton';
 
 interface AboutProps {
   onRequestDemo: () => void;
@@ -45,14 +45,27 @@ export const About: React.FC<AboutProps> = ({ onRequestDemo }) => {
               Delivering dependable, audit-tested automation for accounting, audit, and property finance teams across the GCC and beyond.
             </p>
             <div className="pt-2">
-              <Button
-                variant="teal"
+              <SpecularButton
                 size="sm"
+                radius={16}
+                tint="#079B78"
+                tintOpacity={1}
+                textColor="#ffffff"
+                lineColor="#20B99A"
+                baseColor="#079B78"
+                intensity={1}
+                idleIntensity={0.35}
+                shineSize={8}
+                shineFade={28}
+                thickness={1.1}
+                glow={1}
+                followMouse={true}
+                proximity={200}
                 onClick={onRequestDemo}
-                className="w-full text-btn py-2 font-medium"
+                className="w-full text-btn py-2.5 font-medium"
               >
                 Request a Demo
-              </Button>
+              </SpecularButton>
             </div>
           </div>
         </div>

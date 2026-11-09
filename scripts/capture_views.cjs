@@ -15,25 +15,17 @@ async function capture() {
   // 1. Desktop 1440x900
   await page.setViewport({ width: 1440, height: 900, deviceScaleFactor: 2 });
   await page.goto('http://localhost:3000', { waitUntil: 'networkidle0', timeout: 30000 });
-  await new Promise(resolve => setTimeout(resolve, 300));
+  await page.evaluate(() => {
+    document.documentElement.style.setProperty('scroll-behavior', 'auto', 'important');
+  });
+  await new Promise(resolve => setTimeout(resolve, 500));
 
   // Desktop hero
   const desktopHeroPath = path.join(artifactDir, 'desktop-hero-minimal.png');
   await page.screenshot({ path: desktopHeroPath, fullPage: false });
   console.log('Saved desktop hero screenshot to', desktopHeroPath);
 
-  // Trigger reveals smoothly
-  await page.evaluate(async () => {
-    document.documentElement.style.scrollBehavior = 'auto';
-    const distance = 400;
-    while (document.scrollingElement.scrollTop + window.innerHeight < document.scrollingElement.scrollHeight) {
-      document.scrollingElement.scrollBy(0, distance);
-      await new Promise(resolve => setTimeout(resolve, 40));
-    }
-    window.scrollTo(0, 0);
-  });
-  await new Promise(resolve => setTimeout(resolve, 300));
-
+  // Desktop full
   const desktopFullPath = path.join(artifactDir, 'desktop-full-minimal.png');
   await page.screenshot({ path: desktopFullPath, fullPage: true });
   console.log('Saved desktop full screenshot to', desktopFullPath);
@@ -41,35 +33,27 @@ async function capture() {
   // 2. Mobile 390x844 (iPhone 12/13/14)
   await page.setViewport({ width: 390, height: 844, deviceScaleFactor: 2, isMobile: true, hasTouch: true });
   await page.goto('http://localhost:3000', { waitUntil: 'networkidle0', timeout: 30000 });
-  await new Promise(resolve => setTimeout(resolve, 300));
+  await page.evaluate(() => {
+    document.documentElement.style.setProperty('scroll-behavior', 'auto', 'important');
+  });
+  await new Promise(resolve => setTimeout(resolve, 500));
 
   // Mobile hero
   const mobileHeroPath = path.join(artifactDir, 'mobile-hero-minimal.png');
   await page.screenshot({ path: mobileHeroPath, fullPage: false });
   console.log('Saved mobile hero screenshot to', mobileHeroPath);
 
-  // Trigger reveals smoothly
-  await page.evaluate(async () => {
-    document.documentElement.style.scrollBehavior = 'auto';
-    const distance = 400;
-    while (document.scrollingElement.scrollTop + window.innerHeight < document.scrollingElement.scrollHeight) {
-      document.scrollingElement.scrollBy(0, distance);
-      await new Promise(resolve => setTimeout(resolve, 40));
-    }
-    window.scrollTo(0, 0);
-  });
-  await new Promise(resolve => setTimeout(resolve, 300));
-
+  // Mobile full
   const mobileFullPath = path.join(artifactDir, 'mobile-full-minimal.png');
   await page.screenshot({ path: mobileFullPath, fullPage: true });
   console.log('Saved mobile full screenshot to', mobileFullPath);
 
   // Test mobile menu open
   await page.evaluate(() => {
-    const btn = document.querySelector('button[aria-label="Toggle navigation menu"]');
+    const btn = document.querySelector('button[aria-label="Open menu"]') || document.querySelector('button[aria-label="Toggle navigation menu"]');
     if (btn) btn.click();
   });
-  await new Promise(resolve => setTimeout(resolve, 400));
+  await new Promise(resolve => setTimeout(resolve, 500));
   const mobileMenuPath = path.join(artifactDir, 'mobile-menu-drawer.png');
   await page.screenshot({ path: mobileMenuPath, fullPage: false });
   console.log('Saved mobile menu screenshot to', mobileMenuPath);

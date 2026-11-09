@@ -1,153 +1,157 @@
 'use client';
 
-import React, { useState, useEffect } from 'react';
-import { Menu, X } from 'lucide-react';
-import Logo from '@/components/ui/Logo';
-import Button from '@/components/ui/Button';
+import React from 'react';
+import PillNav, { type PillNavItem } from '@/src/components/reactbits/PillNav';
+import SpecularButton from '@/src/components/reactbits/SpecularButton';
 
 interface NavbarProps {
   onRequestDemo: () => void;
 }
 
 export const Navbar: React.FC<NavbarProps> = ({ onRequestDemo }) => {
-  const [isScrolled, setIsScrolled] = useState(false);
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 20);
-    };
-    window.addEventListener('scroll', handleScroll, { passive: true });
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
-
-  const navLinks = [
-    { name: 'Solutions', href: '#solutions' },
-    { name: 'Tools', href: '#tools' },
-    { name: 'Capabilities', href: '#capabilities' },
-    { name: 'How It Works', href: '#workflow' },
-    { name: 'Human Review', href: '#human-review' },
-    { name: 'About', href: '#about' },
+  const navItems: PillNavItem[] = [
+    { label: 'Capabilities', href: '#capabilities' },
+    { label: 'Solutions', href: '#solutions' },
+    { label: 'Tools', href: '#tools' },
+    { label: 'How It Works', href: '#workflow' },
+    { label: 'Human Oversight', href: '#human-review' },
+    { label: 'About', href: '#about' }
   ];
 
+  const handleItemClick = (
+    item: PillNavItem,
+    _index: number,
+    event: React.MouseEvent<HTMLElement>
+  ) => {
+    if (!item.href) return;
+    
+    // If on a subpage and clicking an anchor link, navigate to home anchor
+    if (window.location.pathname !== '/' && item.href.startsWith('#')) {
+      event.preventDefault();
+      window.location.href = '/' + item.href;
+      return;
+    }
+
+    // Smooth scroll if anchor on current page
+    if (item.href.startsWith('#')) {
+      event.preventDefault();
+      const target = document.querySelector(item.href);
+      if (target) {
+        target.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+  };
+
   return (
-    <>
-      <header
-        className={`fixed top-0 left-0 right-0 z-40 transition-all duration-200 ${
-          isScrolled
-            ? 'bg-white/95 backdrop-blur-sm border-b border-brand-border py-3.5 shadow-sm'
-            : 'bg-transparent py-4 sm:py-5'
-        }`}
-      >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-between">
-            {/* Logo */}
-            <div className="flex items-center">
-              <Logo height={32} width={124} />
-            </div>
-
-            {/* Desktop Navigation - 15px weight 500 */}
-            <nav className="hidden lg:flex items-center space-x-7">
-              {navLinks.map((link) => (
-                <a
-                  key={link.name}
-                  href={link.href}
-                  className="text-btn font-medium text-brand-navy/70 hover:text-brand-navy transition-colors"
-                >
-                  {link.name}
-                </a>
-              ))}
-            </nav>
-
-            {/* Desktop Right CTA - 15px weight 500 */}
-            <div className="hidden lg:flex items-center space-x-4">
-              <Button
-                variant="teal"
-                size="md"
-                onClick={onRequestDemo}
-                className="px-4 py-2"
-              >
-                Request a Demo
-              </Button>
-            </div>
-
-            {/* Mobile Hamburger Toggle */}
-            <div className="flex lg:hidden items-center space-x-2">
-              <Button
-                variant="teal"
-                size="sm"
-                onClick={onRequestDemo}
-                className="px-3 py-1.5"
-              >
-                Demo
-              </Button>
-              <button
-                type="button"
-                onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-                className="p-2 text-brand-navy hover:text-brand-green focus:outline-none focus:ring-2 focus:ring-brand-teal rounded-lg"
-                aria-label="Toggle navigation menu"
-                aria-expanded={isMobileMenuOpen}
-              >
-                {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-              </button>
-            </div>
-          </div>
+    <header className="fixed top-3 sm:top-5 left-0 right-0 z-50 pointer-events-none px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto flex items-center justify-between gap-3">
+        {/* 1. Left: Logo blending with background - NO PILL */}
+        <div className="pointer-events-auto flex items-center flex-1 justify-start">
+          <a
+            href="/"
+            className="inline-flex items-center select-none py-1 transition-opacity hover:opacity-85 focus:outline-none"
+            aria-label="Endloops Home"
+          >
+            <img
+              src="/images/endloops-logo.png"
+              alt="Endloops"
+              className="h-7 sm:h-8 w-auto object-contain"
+            />
+          </a>
         </div>
-      </header>
 
-      {/* Mobile Menu Drawer */}
-      {isMobileMenuOpen && (
-        <div className="fixed inset-0 z-50 lg:hidden">
-          <div
-            className="fixed inset-0 bg-brand-navy/30 backdrop-blur-xs"
-            onClick={() => setIsMobileMenuOpen(false)}
+        {/* 2. Center: Centered PillNav (Desktop md+) */}
+        <div className="pointer-events-auto hidden md:flex items-center justify-center flex-none">
+          <PillNav
+            items={navItems}
+            itemStyle="pill"
+            hoverEffect="fill"
+            indicator="dot"
+            surface="glass"
+            size="md"
+            collapse="never"
+            intro={true}
+            theme="light"
+            highlightColor="#079B78"
+            highlightTextColor="#ffffff"
+            textColor="#142B45"
+            onItemClick={handleItemClick}
           />
+        </div>
 
-          <div className="fixed inset-y-0 right-0 max-w-xs w-full bg-white shadow-xl p-6 flex flex-col justify-between border-l border-brand-border">
-            <div>
-              <div className="flex items-center justify-between pb-5 border-b border-brand-border">
-                <Logo height={28} width={110} />
-                <button
-                  type="button"
-                  onClick={() => setIsMobileMenuOpen(false)}
-                  className="p-1.5 text-brand-navymuted hover:text-brand-navy rounded-lg"
-                  aria-label="Close menu"
-                >
-                  <X className="w-5 h-5" />
-                </button>
-              </div>
+        {/* 3. Right: SpecularButton Request a Demo + Mobile Nav Toggle */}
+        <div className="pointer-events-auto flex items-center flex-1 justify-end gap-2 sm:gap-3">
+          {/* Mobile hamburger navigation pill */}
+          <div className="md:hidden">
+            <PillNav
+              items={navItems}
+              itemStyle="pill"
+              hoverEffect="fill"
+              indicator="dot"
+              surface="glass"
+              size="md"
+              collapse="always"
+              intro={false}
+              theme="light"
+              highlightColor="#079B78"
+              highlightTextColor="#ffffff"
+              textColor="#142B45"
+              onItemClick={handleItemClick}
+            />
+          </div>
 
-              <div className="py-6 space-y-1">
-                {navLinks.map((link) => (
-                  <a
-                    key={link.name}
-                    href={link.href}
-                    onClick={() => setIsMobileMenuOpen(false)}
-                    className="block px-3 py-2.5 text-body font-medium text-brand-navy hover:text-brand-green rounded-lg transition-colors"
-                  >
-                    {link.name}
-                  </a>
-                ))}
-              </div>
-            </div>
+          {/* Desktop SpecularButton */}
+          <div className="hidden sm:inline-block">
+            <SpecularButton
+              size="md"
+              radius={18}
+              tint="#079B78"
+              tintOpacity={1}
+              textColor="#ffffff"
+              lineColor="#ffffff"
+              baseColor="#079B78"
+              intensity={1}
+              idleIntensity={0.35}
+              shineSize={10}
+              shineFade={34}
+              thickness={1.2}
+              glow={1}
+              followMouse={true}
+              proximity={250}
+              onClick={onRequestDemo}
+              className="font-medium text-btn"
+            >
+              Request a Demo
+            </SpecularButton>
+          </div>
 
-            <div className="pt-6 border-t border-brand-border">
-              <Button
-                variant="teal"
-                size="md"
-                className="w-full py-2.5"
-                onClick={() => {
-                  setIsMobileMenuOpen(false);
-                  onRequestDemo();
-                }}
-              >
-                Request a Demo
-              </Button>
-            </div>
+          {/* Mobile SpecularButton */}
+          <div className="inline-block sm:hidden">
+            <SpecularButton
+              size="sm"
+              radius={14}
+              tint="#079B78"
+              tintOpacity={1}
+              textColor="#ffffff"
+              lineColor="#ffffff"
+              baseColor="#079B78"
+              intensity={1}
+              idleIntensity={0.35}
+              shineSize={8}
+              shineFade={24}
+              thickness={1.1}
+              glow={1}
+              followMouse={true}
+              proximity={200}
+              onClick={onRequestDemo}
+              className="font-semibold text-xs px-3.5 py-1.5"
+            >
+              Demo
+            </SpecularButton>
           </div>
         </div>
-      )}
-    </>
+      </div>
+    </header>
   );
 };
 

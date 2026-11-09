@@ -4,6 +4,7 @@ import React from 'react';
 import SectionHeading from '@/components/ui/SectionHeading';
 import CurtainReveal from '@/components/animations/CurtainReveal';
 import ScrollReveal from '@/components/animations/ScrollReveal';
+import SpotlightCard from '@/src/components/reactbits/SpotlightCard';
 
 interface ToolsProps {
   onRequestDemo?: (productName?: string) => void;
@@ -89,9 +90,13 @@ export const Tools: React.FC<ToolsProps> = ({ onRequestDemo }) => {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
           {tools.map((tool, idx) => (
             <ScrollReveal key={tool.id} delay={idx * 0.04}>
-              <div
+              <SpotlightCard
+                theme="light"
+                spotlightColor="rgba(32, 185, 154, 0.18)"
+                intensity={0.2}
+                spotlightSize={240}
                 onClick={() => onRequestDemo && onRequestDemo(tool.title)}
-                className="h-full rounded-lg p-5 bg-white border border-brand-border flex flex-col justify-between space-y-3 cursor-pointer hover:border-brand-teal/50 transition-colors"
+                className="h-full rounded-xl p-5 bg-white border border-brand-border flex flex-col justify-between space-y-3 cursor-pointer hover:border-brand-teal/60 transition-colors shadow-xs"
               >
                 <div className="space-y-1.5">
                   <div className="flex items-center justify-between text-label text-brand-navymuted">
@@ -113,7 +118,7 @@ export const Tools: React.FC<ToolsProps> = ({ onRequestDemo }) => {
                   <span>Input: {tool.inputs}</span>
                   <span className="text-brand-green font-medium text-btn">Inquire &rarr;</span>
                 </div>
-              </div>
+              </SpotlightCard>
             </ScrollReveal>
           ))}
         </div>

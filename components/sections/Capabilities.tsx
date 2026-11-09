@@ -11,6 +11,7 @@ import {
 } from 'lucide-react';
 import SectionHeading from '@/components/ui/SectionHeading';
 import ScrollReveal from '@/components/animations/ScrollReveal';
+import SpotlightCard from '@/src/components/reactbits/SpotlightCard';
 
 export const Capabilities: React.FC = () => {
   const [activeTab, setActiveTab] = useState(0);
@@ -173,8 +174,14 @@ export const Capabilities: React.FC = () => {
             </ul>
           </div>
 
-          {/* Right Preview Card - Clean minimal table */}
-          <div className="md:col-span-6 bg-brand-offwhite p-4 rounded-lg border border-brand-border space-y-2.5">
+          {/* Right Preview Card - SpotlightCard with clean minimal table */}
+          <SpotlightCard
+            theme="light"
+            spotlightColor="rgba(32, 185, 154, 0.16)"
+            intensity={0.2}
+            spotlightSize={260}
+            className="md:col-span-6 bg-brand-offwhite p-4 rounded-xl border border-brand-border space-y-2.5"
+          >
             <div className="flex items-center justify-between pb-2 border-b border-brand-border">
               <span className="text-body-sm font-semibold text-brand-navy">{current.preview.title}</span>
               <span className="text-label text-brand-navymuted font-mono">Illustrative</span>
@@ -192,7 +199,7 @@ export const Capabilities: React.FC = () => {
             <div className="text-label text-brand-navymuted">
               Sample data shown for demonstration purposes.
             </div>
-          </div>
+          </SpotlightCard>
         </motion.div>
       </div>
     </section>

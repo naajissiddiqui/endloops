@@ -175,3 +175,4 @@ export const SolutionsPage: React.FC = () => {
 };
 
 export default SolutionsPage;
+

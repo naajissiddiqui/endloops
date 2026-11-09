@@ -1,7 +1,8 @@
 'use client';
 
 import React, { useState } from 'react';
-import Button from '@/components/ui/Button';
+import Aurora from '@/src/components/reactbits/Aurora';
+import SpecularButton from '@/src/components/reactbits/SpecularButton';
 
 interface FinalCTAProps {
   onRequestDemo: (productName?: string) => void;
@@ -23,8 +24,19 @@ export const FinalCTA: React.FC<FinalCTAProps> = ({ onRequestDemo }) => {
   };
 
   return (
-    <section className="py-16 md:py-20 bg-brand-navy text-white">
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-4">
+    <section className="relative py-16 md:py-20 bg-brand-navy text-white overflow-hidden">
+      {/* Subtle Aurora Ambient Background */}
+      <div className="absolute inset-0 pointer-events-none opacity-20">
+        <Aurora
+          colorStops={['#079B78', '#20B99A', '#3679CE']}
+          blend={0.5}
+          amplitude={0.8}
+          speed={0.3}
+          lightMode={false}
+        />
+      </div>
+
+      <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-4">
         {/* H2 Heading: 42px desktop / 30px mobile, weight 600, line-height 1.15, letter-spacing -0.03em */}
         <h2 className="text-h2 text-white">
           Ready to eliminate repetitive financial work?
@@ -56,14 +68,27 @@ export const FinalCTA: React.FC<FinalCTAProps> = ({ onRequestDemo }) => {
                   placeholder="Enter your corporate email"
                   className="flex-1 px-3.5 py-2.5 rounded-lg text-body bg-white/10 border border-white/20 text-white placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-brand-teal transition-colors"
                 />
-                <Button
+                <SpecularButton
                   type="submit"
-                  variant="teal"
                   size="md"
-                  className="w-full sm:w-auto whitespace-nowrap px-5 py-2.5"
+                  radius={16}
+                  tint="#079B78"
+                  tintOpacity={1}
+                  textColor="#ffffff"
+                  lineColor="#20B99A"
+                  baseColor="#079B78"
+                  intensity={1}
+                  idleIntensity={0.35}
+                  shineSize={10}
+                  shineFade={34}
+                  thickness={1.2}
+                  glow={1}
+                  followMouse={true}
+                  proximity={250}
+                  className="w-full sm:w-auto whitespace-nowrap text-btn font-medium px-6 py-2.5"
                 >
                   Request Demo
-                </Button>
+                </SpecularButton>
               </div>
               {error && <p className="text-label text-red-400 text-left">{error}</p>}
             </form>
