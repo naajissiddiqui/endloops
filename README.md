@@ -6,6 +6,7 @@ A modern, high-performance website for **Endloops** — financial automation sof
 
 ---
 
+
 ## Project Note — Endloops Website
 
 I designed and developed a responsive landing page for Endloops, a financial automation company serving accountants, auditors and finance professionals. My goal was to create a digital experience that communicates the company's offerings clearly while establishing a premium, modern and trustworthy brand presence.
